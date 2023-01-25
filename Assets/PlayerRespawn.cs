@@ -6,10 +6,13 @@ public class PlayerRespawn : MonoBehaviour
 {
     private Vector3 respawnPoint;
     public GameObject fallDetector;
+    PlayerHealth playerHealth;
+    public int fallDamage = 1;
 
     void Start()
     {
         respawnPoint = transform.position;
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     void Update()
@@ -22,6 +25,8 @@ public class PlayerRespawn : MonoBehaviour
         if (collision.tag == "Fall Detector")
         {
             transform.position = respawnPoint;
+            playerHealth.takeDamage(fallDamage);
+            
         }
 
         if (collision.tag == "Checkpoint")

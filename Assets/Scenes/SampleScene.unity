@@ -745,11 +745,12 @@ GameObject:
   - component: {fileID: 1181241708}
   - component: {fileID: 1181241707}
   - component: {fileID: 1181241705}
-  - component: {fileID: 1181241703}
   - component: {fileID: 1181241709}
   - component: {fileID: 1181241710}
+  - component: {fileID: 1181241703}
   - component: {fileID: 1181241711}
   - component: {fileID: 1181241712}
+  - component: {fileID: 1181241713}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1028,6 +1029,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallDetector: {fileID: 1958890737}
+  fallDamage: 1
+--- !u!114 &1181241713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181241702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c5829804592a3489b9454f159a0ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 3
+  currHp: 0
 --- !u!1 &1265586876
 GameObject:
   m_ObjectHideFlags: 0
