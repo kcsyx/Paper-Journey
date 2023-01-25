@@ -24,9 +24,6 @@ public class PlayerMovement : MonoBehaviour
     private float glidingSpeed = 2f;
     private float initialGravityScale;
 
-    private Vector3 respawnPoint;
-    public GameObject fallDetector;
-
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -35,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         initialGravityScale = rb.gravityScale;
-        respawnPoint = transform.position;
     }
 
     void Update()
@@ -96,7 +92,6 @@ public class PlayerMovement : MonoBehaviour
 
         Flip();
 
-        fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
     }
 
     private void FixedUpdate()
@@ -107,14 +102,6 @@ public class PlayerMovement : MonoBehaviour
         }*/
 
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Fall Detector")
-        {
-            transform.position = respawnPoint;
-        }
     }
 
     private bool isGrounded()
