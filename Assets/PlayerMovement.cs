@@ -9,18 +9,6 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
     private float horizontal;
 
-    private float coyoteTime = 0.2f;
-    private float coyoteTimeCounter;
-
-    private float jumpBufferTime = 0.2f;
-    private float jumpBufferCounter;
-
-/*    private bool canDash = true;
-    private bool isDashing;
-    private float dashingPower = 30f;
-    private float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;*/
-
     private float glidingSpeed = 2f;
     private float initialGravityScale;
 
@@ -36,42 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-/*        if (isDashing)
-        {
-            return;
-        }*/
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
         //JUMPING
-        if (isGrounded())
-        {
-            coyoteTimeCounter = coyoteTime;
-        }
-        else
-        {
-            coyoteTimeCounter -= Time.deltaTime;
-        }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            jumpBufferCounter = jumpBufferTime;
-        } else
-        {
-            jumpBufferCounter -= Time.deltaTime;
-        }
-
-        if (coyoteTimeCounter > 0 && jumpBufferCounter > 0f)
+        if(Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-
-            jumpBufferCounter = 0f;
-        }
-
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            coyoteTimeCounter = 0f;
         }
 
         //GLIDING
@@ -84,22 +43,12 @@ public class PlayerMovement : MonoBehaviour
             rb.gravityScale = initialGravityScale;
         }
 
-        //DASHING
-/*        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
-        {
-            StartCoroutine(Dash());
-        }*/
-
         Flip();
 
     }
 
     private void FixedUpdate()
     {
-/*        if (isDashing)
-        {
-            return;
-        }*/
 
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
@@ -120,19 +69,4 @@ public class PlayerMovement : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
         }
     }
-
-/*    private IEnumerator Dash()
-    {
-        canDash = false;
-        isDashing = true;
-        rb.gravityScale = 0f;
-        rb.velocity = new Vector2(horizontal * dashingPower, 0f);
-        tr.emitting = true;
-        yield return new WaitForSeconds(dashingTime);
-        tr.emitting = false;
-        rb.gravityScale = initialGravityScale;
-        isDashing = false;
-        yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;
-    }*/
 }
