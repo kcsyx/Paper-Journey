@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public SpriteRenderer sprite;
+    public PlayerMovement playerMovement;
 
     public int maxHp;
     public int currHp;
@@ -35,8 +36,8 @@ public class PlayerHealth : MonoBehaviour
 
     void killPlayer()
     {
-        Debug.Log("U R DEAD");
-        // STUFF
+        sprite.enabled = false;
+        playerMovement.enabled = false;
     }
 
     IEnumerator DamageFlicker()
