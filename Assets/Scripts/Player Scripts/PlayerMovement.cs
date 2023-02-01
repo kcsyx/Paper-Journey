@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float speed = 8f;
+    private float speed = 6f;
     private float jumpingPower = 15f;
     private bool isFacingRight = true;
     private float horizontal;
 
-    private float glidingSpeed = 2f;
+    private float glidingSpeed = 4f;
     private float initialGravityScale;
 
     [SerializeField] private Rigidbody2D rb;

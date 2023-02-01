@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MoveOnTouch : MonoBehaviour
 {
+
+    //Place this script on a platform with rigidbody and box collider with no friction material
+
     [SerializeField]
     private Vector3 velocity;
 

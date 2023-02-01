@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
             else if (collision.tag == "Hinge_Wall")
             {
                 collision.attachedRigidbody.bodyType = RigidbodyType2D.Dynamic;
-                collision.attachedRigidbody.AddForce(Vector2.right * 50, ForceMode2D.Impulse);
+                collision.attachedRigidbody.AddForce(Vector2.right * 10, ForceMode2D.Impulse);
                 Destroy(gameObject);
             }
             Destroy(gameObject);
