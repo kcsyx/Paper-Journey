@@ -33,6 +33,9 @@ public class Bullet : MonoBehaviour
                 collision.attachedRigidbody.bodyType = RigidbodyType2D.Dynamic;
                 collision.attachedRigidbody.AddForce(Vector2.right * 10, ForceMode2D.Impulse);
                 Destroy(gameObject);
+            } else if (collision.tag == "Checkpoint")
+            {
+                return;
             }
             Destroy(gameObject);
         }
