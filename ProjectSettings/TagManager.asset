@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Checkpoint
   - Hinge_Wall
+  - Enemy
   layers:
   - Default
   - TransparentFX

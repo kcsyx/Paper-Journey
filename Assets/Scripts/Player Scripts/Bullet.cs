@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     private float speed = 10f;
     private Rigidbody2D rb;
     public GameObject bulletPlatformPrefab;
+    public int bulletDamage = 1;
 
     void Start()
     {
@@ -26,16 +27,18 @@ public class Bullet : MonoBehaviour
             if (collision.tag == "Wall")
             {
                 Instantiate(bulletPlatformPrefab, transform.position, transform.rotation);
-                Destroy(gameObject);
             }
             else if (collision.tag == "Hinge_Wall")
             {
                 collision.attachedRigidbody.bodyType = RigidbodyType2D.Dynamic;
                 collision.attachedRigidbody.AddForce(Vector2.right * 10, ForceMode2D.Impulse);
-                Destroy(gameObject);
             } else if (collision.tag == "Checkpoint")
             {
                 return;
+            }
+            else if (collision.tag == "Enemy")
+            {
+                collision.gameObject.GetComponent<EnemyHealth>().takeDamage(bulletDamage);
             }
             Destroy(gameObject);
         }

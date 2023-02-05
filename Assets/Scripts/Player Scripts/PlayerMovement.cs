@@ -12,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
     private float glidingSpeed = 4f;
     private float initialGravityScale;
 
+    public float KBForce;
+    public float KBCounter;
+    public float KBTotalTime;
+    public bool KnockFromRight;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -49,8 +54,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(KBCounter <= 0)
+        {
+            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        } else
+        {
+            if (KnockFromRight)
+            {
+                rb.velocity = new Vector2(-KBForce, KBForce);
+            }
+            if (!KnockFromRight)
+            {
+                rb.velocity = new Vector2(KBForce, KBForce);
+            }
 
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+            KBCounter -= Time.deltaTime;
+        }
     }
 
     private bool isGrounded()

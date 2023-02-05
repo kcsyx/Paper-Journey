@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HingeLock : MonoBehaviour
 {
-    HingeJoint2D hingeJoint;
+    new HingeJoint2D hingeJoint;
     JointAngleLimits2D limits;
 
     // Start is called before the first frame update
