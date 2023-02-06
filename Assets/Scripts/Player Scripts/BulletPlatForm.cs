@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BulletPlatForm : MonoBehaviour
 {
-    // Update is called once per frame
+
     void Update()
     {
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 1.2f);
     }
 }
