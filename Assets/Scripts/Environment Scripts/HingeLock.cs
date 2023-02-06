@@ -17,7 +17,7 @@ public class HingeLock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hingeJoint.jointAngle >= 90)
+        if(hingeJoint.jointAngle >= 70)
         {
             limits.min = 90;
             limits.max = 90;

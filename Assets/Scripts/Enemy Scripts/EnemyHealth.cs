@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public SpriteRenderer sprite;
+
     public int maxHp;
     public int currHp;
+    public int flickerAmt;
+    public float flickerDuration;
 
     void Start()
     {
@@ -19,10 +23,22 @@ public class EnemyHealth : MonoBehaviour
             {
                 killEnemy();
             }
+            StartCoroutine(DamageFlicker());
     }
 
     void killEnemy()
     {
         Destroy(gameObject);
+    }
+
+    IEnumerator DamageFlicker()
+    {
+        for (int i = 0; i < flickerAmt; i++)
+        {
+            sprite.color = new Color(1f, 1f, 1f, 0.5f);
+            yield return new WaitForSeconds(flickerDuration);
+            sprite.color = Color.red;
+            yield return new WaitForSeconds(flickerDuration);
+        }
     }
 }
