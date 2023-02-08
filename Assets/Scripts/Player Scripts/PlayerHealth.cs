@@ -6,10 +6,11 @@ public class PlayerHealth : MonoBehaviour
 {
     public SpriteRenderer sprite;
     public PlayerMovement playerMovement;
+    public Shoot playerShoot;
 
     public int maxHp;
     public int currHp;
-
+    
     public bool canTakeDamage;
     public int flickerAmt;
     public float flickerDuration;
@@ -38,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
     {
         sprite.enabled = false;
         playerMovement.enabled = false;
+        playerShoot.enabled = false;
     }
 
     IEnumerator DamageFlicker()

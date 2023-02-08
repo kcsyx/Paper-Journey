@@ -1750,6 +1750,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecbf1ef98810e24e8c9b0b86a9a051e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1181241711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3393064266457095115, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
+  m_PrefabInstance: {fileID: 3393064267431758500}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676091ab4247fc74ea25d28deb7da374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1210046793 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4007704844353461352, guid: a5c6d9488b8b5314ab4bbee3987e42c8, type: 3}
@@ -3123,6 +3134,10 @@ PrefabInstance:
       propertyPath: flickerAmt
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3393064266457095125, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
+      propertyPath: playerShoot
+      value: 
+      objectReference: {fileID: 1181241711}
     - target: {fileID: 3393064266457095126, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
