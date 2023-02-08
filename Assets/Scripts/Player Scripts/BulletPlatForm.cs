@@ -7,6 +7,6 @@ public class BulletPlatForm : MonoBehaviour
 
     void Update()
     {
-        Destroy(gameObject, 1.2f);
+        /*Destroy(gameObject, 2.4f);*/
     }
 }
