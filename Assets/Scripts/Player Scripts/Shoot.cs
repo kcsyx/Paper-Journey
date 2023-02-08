@@ -14,8 +14,12 @@ public class Shoot : MonoBehaviour
     public bool isCooldown;
     public float cooldown;
 
+    public int platformsSpawned;
+    public List<GameObject> bullets;
+
     void Start()
     {
+        platformsSpawned = 0;
         cdImage.fillAmount = 0;
     }
 

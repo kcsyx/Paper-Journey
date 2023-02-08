@@ -3126,6 +3126,10 @@ PrefabInstance:
       propertyPath: cooldown
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3393064266457095115, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
+      propertyPath: platformsSpawned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3393064266457095124, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
       propertyPath: fallDetector
       value: 

@@ -9,6 +9,7 @@ TagManager:
   - Checkpoint
   - Hinge_Wall
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

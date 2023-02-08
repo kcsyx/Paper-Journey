@@ -251,6 +251,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ecbf1ef98810e24e8c9b0b86a9a051e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KBForce: 0
+  KBCounter: 0
+  KBTotalTime: 0
+  KnockFromRight: 0
   rb: {fileID: 3393064266457095117}
   groundCheck: {fileID: 3393064267505175369}
   groundLayer:
@@ -270,9 +274,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 3393064266931636583}
-  bulletPrefab: {fileID: 2498744482740538243, guid: 0f7ff30acc8ce2345b0e3aa681e72fc8, type: 3}
+  bulletPrefab: {fileID: 7095802111110526077, guid: 2d825f6feb4704642a98572afc0f28c9, type: 3}
+  cdImage: {fileID: 0}
+  isCooldown: 0
   cooldown: 2
-  lastShot: 0
+  platformsSpawned: 0
 --- !u!114 &3393064266457095124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,6 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 3393064266457095119}
   playerMovement: {fileID: 3393064266457095107}
+  playerShoot: {fileID: 0}
   maxHp: 3
   currHp: 0
   canTakeDamage: 0

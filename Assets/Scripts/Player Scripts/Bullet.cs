@@ -6,18 +6,23 @@ public class Bullet : MonoBehaviour
 {
     private float speed = 10f;
     private Rigidbody2D rb;
-    public GameObject bulletPlatformPrefab;
     public int bulletDamage = 1;
+    Collider2D bulletCollider;
+    public bool IsPlatformOrNot = false;
+
+    public Shoot playerShoot;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
+        bulletCollider = GetComponent<Collider2D>();
+        bulletCollider.isTrigger = true;
     }
 
     void Update()
     {
-        Destroy(gameObject, 1f);
+        StartCoroutine(DestroyBullet());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,7 +31,28 @@ public class Bullet : MonoBehaviour
         {
             if (collision.tag == "Wall")
             {
-                Instantiate(bulletPlatformPrefab, transform.position, transform.rotation);
+                Debug.Log(playerShoot.platformsSpawned);
+
+                if (playerShoot.platformsSpawned == 0)
+                {
+                    bulletCollider.isTrigger = false;
+                    IsPlatformOrNot = true;
+                    playerShoot.platformsSpawned++;
+                    playerShoot.bullets.Add(gameObject);
+                    rb.bodyType = RigidbodyType2D.Static;
+                    return;
+                } else
+                {
+                    Destroy(playerShoot.bullets[0]);
+                    playerShoot.bullets.RemoveAt(0);
+                    playerShoot.platformsSpawned--;
+                    bulletCollider.isTrigger = false;
+                    IsPlatformOrNot = true;
+                    playerShoot.platformsSpawned++;
+                    playerShoot.bullets.Add(gameObject);
+                    rb.bodyType = RigidbodyType2D.Static;
+                    return;
+                }
             }
             else if (collision.tag == "Hinge_Wall")
             {
@@ -40,6 +66,19 @@ public class Bullet : MonoBehaviour
             {
                 collision.gameObject.GetComponent<EnemyHealth>().takeDamage(bulletDamage);
             }
+            else if (collision.tag == "Bullet")
+            {
+                return;
+            }
+            Destroy(gameObject);
+        }
+    }
+
+    IEnumerator DestroyBullet()
+    {
+        yield return new WaitForSeconds(1);
+        if(!IsPlatformOrNot)
+        {
             Destroy(gameObject);
         }
     }
