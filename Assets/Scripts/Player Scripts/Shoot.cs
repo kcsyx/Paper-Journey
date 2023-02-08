@@ -14,8 +14,6 @@ public class Shoot : MonoBehaviour
     public bool isCooldown;
     public float cooldown;
 
-    public int counter = 0;
-
     void Start()
     {
         cdImage.fillAmount = 0;
