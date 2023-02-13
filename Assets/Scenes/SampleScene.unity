@@ -894,7 +894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1181241708}
   offset: {x: 0, y: 0, z: -10}
-  smoothFactor: 5
+  smoothFactor: 2
   minValues: {x: 120.8, y: 37.7, z: -10}
   maxValue: {x: 253.6, y: 47.18, z: -10}
 --- !u!1 &532666416
@@ -1144,6 +1144,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6361302459708462725, guid: f2f8692cba069f54493fdb717596154b, type: 3}
   m_PrefabInstance: {fileID: 2004178726}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &796001744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796001746}
+  - component: {fileID: 796001745}
+  m_Layer: 0
+  m_Name: DropletSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &796001745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796001744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b49a6d20e5b974f8cff8ad1fdade67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropletPrefab: {fileID: 1908898062685234320, guid: 245543a1674c5324689b6f2e2f4cfaee, type: 3}
+  dropletInterval: 2
+--- !u!4 &796001746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796001744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 212.17, y: 51.15, z: 8.481402}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &813337128 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4007704844353461352, guid: a5c6d9488b8b5314ab4bbee3987e42c8, type: 3}
@@ -3136,12 +3182,16 @@ PrefabInstance:
       objectReference: {fileID: 689097014}
     - target: {fileID: 3393064266457095125, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
       propertyPath: flickerAmt
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3393064266457095125, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
       propertyPath: playerShoot
       value: 
       objectReference: {fileID: 1181241711}
+    - target: {fileID: 3393064266457095125, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
+      propertyPath: flickerDuration
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3393064266457095126, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
@@ -3158,7 +3208,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
 --- !u!1001 &5506792595059256751
 PrefabInstance:

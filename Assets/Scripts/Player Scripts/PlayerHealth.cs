@@ -51,7 +51,8 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(flickerDuration);
             sprite.color = Color.white;
             yield return new WaitForSeconds(flickerDuration);
-            canTakeDamage = true;
         }
+        yield return new WaitForSeconds(1);
+        canTakeDamage = true;
     }
 }
