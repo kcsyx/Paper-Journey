@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public SpriteRenderer sprite;
     public PlayerMovement playerMovement;
+    public PlayerRespawn playerRespawn;
     public Shoot playerShoot;
 
     public int maxHp;
@@ -38,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
     void killPlayer()
     {
         sprite.enabled = false;
+        playerRespawn.enabled = false;
         playerMovement.enabled = false;
         playerShoot.enabled = false;
     }

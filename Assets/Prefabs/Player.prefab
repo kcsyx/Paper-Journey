@@ -200,7 +200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 3393064266457095119}
   playerMovement: {fileID: 3393064266457095107}
-  playerShoot: {fileID: 0}
+  playerRespawn: {fileID: 3393064266457095124}
+  playerShoot: {fileID: 3393064266457095115}
   maxHp: 3
   currHp: 0
   canTakeDamage: 0

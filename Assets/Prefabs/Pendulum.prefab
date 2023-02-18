@@ -151,7 +151,7 @@ HingeJoint2D:
   m_GameObject: {fileID: 6205712182549976218}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 1
+  m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 6205712182869811110}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 6205712183105620506}
   - component: {fileID: 6205712183105620504}
   - component: {fileID: 6205712183105620505}
+  - component: {fileID: 5260362081004380379}
   m_Layer: 6
   m_Name: Platform (2)
   m_TagString: Untagged
@@ -425,3 +426,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.888813, y: 0.20222859}
   m_EdgeRadius: 0
+--- !u!50 &5260362081004380379
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205712183105620507}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

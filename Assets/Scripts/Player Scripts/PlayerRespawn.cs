@@ -24,7 +24,6 @@ public class PlayerRespawn : MonoBehaviour
     {
         if (collision.tag == "Fall Detector")
         {
-            Debug.Log("Ow");
             transform.position = respawnPoint;
             playerHealth.takeDamage(fallDamage);
             
