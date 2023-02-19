@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     public PlayerRespawn playerRespawn;
     public Shoot playerShoot;
 
+    public GameObject deathMenu;
+
     public int maxHp;
     public int currHp;
     
@@ -38,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
 
     void killPlayer()
     {
+        deathMenu.SetActive(true);
         sprite.enabled = false;
         playerRespawn.enabled = false;
         playerMovement.enabled = false;

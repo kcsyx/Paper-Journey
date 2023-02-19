@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public PlayerMovement playerMovement;
+    public PlayerHealth playerHealth;
     public Shoot playerShoot;
 
     public SceneLoader sceneLoader;
@@ -19,7 +20,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && playerHealth.currHp > 0)
         {
             if (isPaused)
             {
