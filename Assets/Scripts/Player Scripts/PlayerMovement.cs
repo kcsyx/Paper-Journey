@@ -7,12 +7,13 @@ public class PlayerMovement : MonoBehaviour
 
     Animator anim;
     private float speed = 6f;
-    private float jumpingPower = 15f;
+    private float jumpingPower = 20f;
     private bool isFacingRight = true;
     private float horizontal;
 
     private float glidingSpeed = 4f;
     private float initialGravityScale;
+    private bool isGliding = false;
 
     public float KBForce;
     public float KBCounter;
@@ -42,10 +43,12 @@ public class PlayerMovement : MonoBehaviour
         //GLIDING
         if (Input.GetButton("Jump") && rb.velocity.y <= 0f)
         {
+            isGliding = true;
             rb.gravityScale = 0;
             rb.velocity = new Vector2(rb.velocity.x, -glidingSpeed);
         } else
         {
+            isGliding = false;
             rb.gravityScale = initialGravityScale;
         }
 
@@ -55,13 +58,34 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rb.velocity.x != 0)
+        if (rb.velocity.x != 0 && isGrounded())
         {
             anim.SetBool("isRunning", true);
         } else
         {
             anim.SetBool("isRunning", false);
         }
+
+        if (isGrounded())
+        {
+            isGliding = false;
+            anim.SetBool("isGliding", false);
+            anim.SetBool("isJumping", false);
+        }
+
+        if (!isGrounded())
+        {
+            if (isGliding)
+            {
+                anim.SetBool("isGliding", true);
+            }
+
+            else if (rb.velocity.y > 0)
+            {
+                anim.SetBool("isJumping", true);
+            }
+        }
+
         if (KBCounter <= 0)
         {
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
