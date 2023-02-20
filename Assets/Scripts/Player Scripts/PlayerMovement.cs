@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,9 +21,9 @@ public class PlayerMovement : MonoBehaviour
     public float KBTotalTime;
     public bool KnockFromRight;
 
+    private bool isGrounded = true;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
+
     void Start()
     {
         initialGravityScale = rb.gravityScale;
@@ -35,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
 
         //JUMPING
-        if(Input.GetButtonDown("Jump") && isGrounded())
+        if(Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
@@ -58,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rb.velocity.x != 0 && isGrounded())
+        if (rb.velocity.x != 0 && isGrounded)
         {
             anim.SetBool("isRunning", true);
         } else
@@ -66,14 +67,14 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isRunning", false);
         }
 
-        if (isGrounded())
+        if (isGrounded)
         {
             isGliding = false;
             anim.SetBool("isGliding", false);
             anim.SetBool("isJumping", false);
         }
 
-        if (!isGrounded())
+        if (!isGrounded)
         {
             if (isGliding)
             {
@@ -109,9 +110,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool isGrounded()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        if(collision.gameObject.layer == 6)
+        {
+            isGrounded = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            isGrounded = false;
+        }
     }
 
     private void Flip()

@@ -6809,11 +6809,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5375628214333398301, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 184.94
+      value: 200.73
       objectReference: {fileID: 0}
     - target: {fileID: 5375628214333398301, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.96
+      value: 38.89
       objectReference: {fileID: 0}
     - target: {fileID: 5375628214333398301, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6854,6 +6854,22 @@ PrefabInstance:
     - target: {fileID: 5375628214916247885, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432695096591248567, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
+      propertyPath: m_Size.y
+      value: 0.26387405
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432695096591248567, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
+      propertyPath: m_Offset.y
+      value: -3.3424702
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432695096591248567, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7.617439
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432695096591248567, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 7.61
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
