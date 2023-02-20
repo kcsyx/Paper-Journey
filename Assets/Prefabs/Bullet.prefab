@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletDamage: 1
   IsPlatformOrNot: 0
-  playerShoot: {fileID: 3393064266457095115, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
+  playerShoot: {fileID: 5482561909030475957, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
 --- !u!61 &6077219801156949800
 BoxCollider2D:
   m_ObjectHideFlags: 0
