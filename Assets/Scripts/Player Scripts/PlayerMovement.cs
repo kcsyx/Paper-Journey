@@ -79,10 +79,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 anim.SetBool("isGliding", true);
             }
-
             else if (rb.velocity.y > 0)
             {
                 anim.SetBool("isJumping", true);
+            }
+            if(rb.velocity.y == 0)
+            {
+                anim.SetBool("isGliding", false);
             }
         }
 
