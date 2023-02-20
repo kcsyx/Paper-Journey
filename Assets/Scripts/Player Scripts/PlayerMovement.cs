@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    Animator anim;
     private float speed = 6f;
     private float jumpingPower = 15f;
     private bool isFacingRight = true;
@@ -23,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         initialGravityScale = rb.gravityScale;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -52,10 +55,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(KBCounter <= 0)
+        if (rb.velocity.x != 0)
+        {
+            anim.SetBool("isRunning", true);
+        } else
+        {
+            anim.SetBool("isRunning", false);
+        }
+        if (KBCounter <= 0)
         {
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        } else
+        } 
+        
+        else
         {
             if (KnockFromRight)
             {
