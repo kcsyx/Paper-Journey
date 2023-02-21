@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, -glidingSpeed);
         } else
         {
+            anim.SetBool("isGliding", false);
             isGliding = false;
             rb.gravityScale = initialGravityScale;
         }

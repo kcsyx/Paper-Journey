@@ -68,6 +68,7 @@ public class Bullet : MonoBehaviour
             }
             else if (collision.tag == "Bullet")
             {
+                Destroy(gameObject);
                 return;
             }
             Destroy(gameObject);
