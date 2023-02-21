@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; //temp
 
 public class PlayerRespawn : MonoBehaviour
 {
@@ -32,6 +33,12 @@ public class PlayerRespawn : MonoBehaviour
         if (collision.tag == "Checkpoint")
         {
             respawnPoint = collision.transform.position;
+        }
+
+        //temp
+        if (collision.tag == "Goal")
+        {
+            SceneManager.LoadScene("End Screen");
         }
     }
 }

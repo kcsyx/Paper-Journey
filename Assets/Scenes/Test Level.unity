@@ -1452,9 +1452,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1181241708}
   smoothTime: 0.2
-  positionOffset: {x: 0, y: 0, z: -10}
+  positionOffset: {x: 0, y: 10, z: -10}
   xLimit: {x: 120.8, y: 279.6}
-  yLimit: {x: 37.7, y: 47.18}
+  yLimit: {x: 37.7, y: 35}
 --- !u!1001 &529880912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6809,11 +6809,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5375628214333398301, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 200.73
+      value: 107.43
       objectReference: {fileID: 0}
     - target: {fileID: 5375628214333398301, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 38.89
+      value: 31.98
       objectReference: {fileID: 0}
     - target: {fileID: 5375628214333398301, guid: f2bafce062d806a43a4b13032b2f0b77, type: 3}
       propertyPath: m_LocalPosition.z

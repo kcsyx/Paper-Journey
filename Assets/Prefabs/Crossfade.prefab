@@ -56,7 +56,7 @@ MonoBehaviour:
   transition: {fileID: 306385987146564790}
   delay: 0.5
   btn: {fileID: 0}
-  destination: Level1
+  destination: 
 --- !u!222 &306385987146564789
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ TagManager:
   - Hinge_Wall
   - Enemy
   - Bullet
+  - Goal
   layers:
   - Default
   - TransparentFX
