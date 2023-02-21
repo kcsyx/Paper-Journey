@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -17,6 +18,10 @@ public class Shoot : MonoBehaviour
     public int platformsSpawned;
     public List<GameObject> bullets;
 
+    public LayerMask wallLayer;
+    public Transform playerTransform;
+    public PlayerMovement playerMovement;
+    private bool insideWall;
     void Start()
     {
         platformsSpawned = 0;
@@ -26,6 +31,7 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        insideWall = Physics2D.Linecast(playerTransform.position, shootingPoint.position, wallLayer);
         Fire();
     }
 
@@ -35,7 +41,21 @@ public class Shoot : MonoBehaviour
         {
             isCooldown = true;
             cdImage.fillAmount = 1;
-            Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+            if (!insideWall)
+            {
+                Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+            } else
+            {
+                playerMovement.KBCounter = playerMovement.KBTotalTime;
+                if (playerTransform.rotation.y == 0)
+                {
+                    playerMovement.KnockFromRight = true;
+                }
+                else if (playerTransform.rotation.y < 0)
+                {
+                    playerMovement.KnockFromRight = false;
+                }
+            }
         }
 
         if (isCooldown)

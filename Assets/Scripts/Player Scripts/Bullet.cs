@@ -31,7 +31,6 @@ public class Bullet : MonoBehaviour
         {
             if (collision.tag == "Wall")
             {
-                Debug.Log(playerShoot.platformsSpawned);
 
                 if (playerShoot.platformsSpawned == 0)
                 {
