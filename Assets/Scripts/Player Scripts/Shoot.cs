@@ -47,7 +47,7 @@ public class Shoot : MonoBehaviour
             } else
             {
                 playerMovement.KBCounter = playerMovement.KBTotalTime;
-                if (playerTransform.rotation.y == 0)
+                if (playerTransform.rotation.y >= 0)
                 {
                     playerMovement.KnockFromRight = true;
                 }
