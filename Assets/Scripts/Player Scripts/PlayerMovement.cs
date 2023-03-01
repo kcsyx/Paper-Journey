@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
         horizontal = Input.GetAxisRaw("Horizontal");
 
         //JUMPING
@@ -118,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.layer == 6)
         {
+            Debug.Log("Entered");
             isGrounded = true;
         }
     }
@@ -125,7 +125,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
+            Debug.Log("Exited");
             isGrounded = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == 6)
+        {
+            Debug.Log("Staying");
+            isGrounded = true;
         }
     }
 
