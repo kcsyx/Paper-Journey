@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
             if (collision.tag == "Wall")
             {
 
-                if (playerShoot.platformsSpawned == 0)
+                if (playerShoot.platformsSpawned == 0 || playerShoot.platformsSpawned == 1)
                 {
                     bulletCollider.isTrigger = false;
                     IsPlatformOrNot = true;
