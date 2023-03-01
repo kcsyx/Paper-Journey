@@ -117,7 +117,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.layer == 6)
         {
-            Debug.Log("Entered");
             isGrounded = true;
         }
     }
@@ -125,7 +124,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
-            Debug.Log("Exited");
             isGrounded = false;
         }
     }
@@ -134,7 +132,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.layer == 6)
         {
-            Debug.Log("Staying");
             isGrounded = true;
         }
     }
