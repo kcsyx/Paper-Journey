@@ -20,9 +20,10 @@ public class PlayerMovement : MonoBehaviour
     public float KBTotalTime;
     public bool KnockFromRight;
     
-    private bool isGrounded = true;
+    public bool isGrounded = true;
     [SerializeField] private Rigidbody2D rb;
 
+    public ParticleController particleController;
     public Shoot playerShoot;
 
     void Start()
@@ -117,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.layer == 6)
         {
+            particleController.fallParticle.Play();
             isGrounded = true;
         }
     }
