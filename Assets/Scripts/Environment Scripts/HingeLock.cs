@@ -7,7 +7,8 @@ public class HingeLock : MonoBehaviour
     new HingeJoint2D hingeJoint;
     JointAngleLimits2D limits;
     Rigidbody2D rb;
-
+    public ParticleSystem fallParticle;
+    private bool fell = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,11 @@ public class HingeLock : MonoBehaviour
             hingeJoint.limits = limits;
             hingeJoint.useLimits = true;
             rb.bodyType = RigidbodyType2D.Static;
+            if (!fell)
+            {
+                fallParticle.Play();
+                fell = true;
+            }
         }
     }
 }
