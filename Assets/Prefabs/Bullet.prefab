@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7497268913559674211}
   - component: {fileID: 6077219801156949800}
   - component: {fileID: 424565884731530785}
+  - component: {fileID: 3289448595489501418}
   m_Layer: 6
   m_Name: Bullet
   m_TagString: Bullet
@@ -176,3 +177,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5387566, y: 1.0643884}
   m_EdgeRadius: 0
+--- !u!114 &3289448595489501418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095802111110526077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -2.0418832, y: -0.5458579, z: 0}
+  - {x: -2.1288767, y: -0.12096782, z: 0}
+  - {x: -2.051749, y: 0.5000438, z: 0}
+  - {x: -0.20309111, y: 0.5237891, z: 0}
+  - {x: 0.25502542, y: 0.7189125, z: 0}
+  - {x: 0.4051552, y: 0.5256317, z: 0}
+  - {x: 0.44166502, y: 0.09960711, z: 0}
+  - {x: 2.0874891, y: -0.010679755, z: 0}
+  - {x: 2.0790062, y: -0.02764721, z: 0}
+  - {x: 0.4586325, y: -0.095516235, z: 0}
+  - {x: 0.39605793, y: -0.52040714, z: 0}
+  - {x: 0.23805796, y: -0.75724065, z: 0}
+  - {x: -0.23702602, y: -0.5960514, z: 0}
+  m_ShapePathHash: 717045722
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -82344
