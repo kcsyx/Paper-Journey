@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rb.velocity.x != 0 && isGrounded)
+        if (horizontal != 0 && isGrounded)
         {
             anim.SetBool("isRunning", true);
         } else

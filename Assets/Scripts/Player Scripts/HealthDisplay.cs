@@ -10,7 +10,7 @@ public class HealthDisplay : MonoBehaviour
 
     public Sprite emptyHeart;
     public Sprite fullHeart;
-    public Image[] hearts;
+    public List<Image> hearts;
 
     public PlayerHealth playerHealth;
 
@@ -24,7 +24,7 @@ public class HealthDisplay : MonoBehaviour
         currHp = playerHealth.currHp;
         maxHp = playerHealth.maxHp;
 
-        for (int i = 0; i < hearts.Length; i++)
+        for (int i = 0; i < hearts.Count; i++)
         {
             if(i < currHp)
             {
