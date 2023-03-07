@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Heal : MonoBehaviour
 {
-    public PlayerHealth playerHealth;
 
     public float speed = 0.2f;
     private float initialY;
+    private bool healed = false;
 
     private void Start()
     {
@@ -22,12 +19,19 @@ public class Heal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !healed)
         {
-            if(playerHealth.currHp < playerHealth.maxHp)
+            healed = true;
+            if(PlayerHealth.currHp < PlayerHealth.maxHp)
             {
-                playerHealth.currHp += 1;
                 Destroy(gameObject);
+                PlayerHealth.currHp += 1;
+            }
+            else if (PlayerHealth.currHp == PlayerHealth.maxHp)
+            {
+                Destroy(gameObject);
+                PlayerHealth.maxHp += 1;
+                PlayerHealth.currHp += 1;
             }
         }
     }

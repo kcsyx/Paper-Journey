@@ -13,6 +13,8 @@ TagManager:
   - Goal
   - Heart
   - Ending
+  - ZoomOut
+  - ZoomIn
   layers:
   - Default
   - TransparentFX

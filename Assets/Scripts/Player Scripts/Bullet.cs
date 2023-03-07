@@ -57,7 +57,7 @@ public class Bullet : MonoBehaviour
             {
                 collision.attachedRigidbody.bodyType = RigidbodyType2D.Dynamic;
                 collision.attachedRigidbody.AddForce(Vector2.right * 10, ForceMode2D.Impulse);
-            } else if (collision.tag == "Checkpoint")
+            } else if (collision.tag == "Checkpoint" || collision.tag == "ZoomOut" || collision.tag == "ZoomIn" || collision.tag == "Goal")
             {
                 return;
             }

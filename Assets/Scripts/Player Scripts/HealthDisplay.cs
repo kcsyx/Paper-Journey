@@ -5,14 +5,11 @@ using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
-    public int currHp;
-    public int maxHp;
+
 
     public Sprite emptyHeart;
     public Sprite fullHeart;
     public List<Image> hearts;
-
-    public PlayerHealth playerHealth;
 
     void Start()
     {
@@ -21,12 +18,9 @@ public class HealthDisplay : MonoBehaviour
 
     void Update()
     {
-        currHp = playerHealth.currHp;
-        maxHp = playerHealth.maxHp;
-
         for (int i = 0; i < hearts.Count; i++)
         {
-            if(i < currHp)
+            if(i < PlayerHealth.currHp)
             {
                 hearts[i].sprite = fullHeart;
             }
@@ -35,7 +29,7 @@ public class HealthDisplay : MonoBehaviour
                 hearts[i].sprite = emptyHeart;
             }
 
-            if (i < maxHp)
+            if (i < PlayerHealth.maxHp)
             {
                 hearts[i].enabled = true;
             }

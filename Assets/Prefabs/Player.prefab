@@ -10097,8 +10097,6 @@ MonoBehaviour:
   playerRespawn: {fileID: 6977015308277005448}
   playerShoot: {fileID: 6977015308551129963}
   deathMenu: {fileID: 0}
-  maxHp: 3
-  currHp: 0
   canTakeDamage: 0
   flickerAmt: 3
   flickerDuration: 0.1
@@ -10114,15 +10112,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 408e3a352fe25874ab00a81c3a055bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHp: 0
-  maxHp: 0
   emptyHeart: {fileID: 21300000, guid: 302be13a8f35c44428040f2a96bfa983, type: 3}
   fullHeart: {fileID: 21300000, guid: 346afcaaaf4ad0e4b8fb54eb72690c22, type: 3}
   hearts:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  playerHealth: {fileID: 6977015308551129961}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!70 &6977015308277005460
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

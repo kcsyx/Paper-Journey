@@ -11,8 +11,8 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject deathMenu;
 
-    public int maxHp;
-    public int currHp;
+    static public int maxHp = 3;
+    static public int currHp = maxHp;
     
     public bool canTakeDamage;
     public int flickerAmt;
@@ -20,7 +20,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        currHp = maxHp;
         canTakeDamage = true;
     }
 
