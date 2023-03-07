@@ -21,6 +21,7 @@ public class Pendulum : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*Debug.Log(transform.rotation.z);*/
         Move();
     }
 

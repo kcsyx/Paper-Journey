@@ -38,7 +38,7 @@ public class PlayerRespawn : MonoBehaviour
         //temp
         if (collision.tag == "Goal")
         {
-            SceneManager.LoadScene("End Screen");
+            SceneManager.LoadScene("Level 2");
         }
     }
 }
