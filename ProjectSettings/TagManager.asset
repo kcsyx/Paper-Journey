@@ -12,6 +12,7 @@ TagManager:
   - Bullet
   - Goal
   - Heart
+  - Ending
   layers:
   - Default
   - TransparentFX

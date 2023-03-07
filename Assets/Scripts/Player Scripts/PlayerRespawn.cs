@@ -40,5 +40,10 @@ public class PlayerRespawn : MonoBehaviour
         {
             SceneManager.LoadScene("Level 2");
         }
+
+        if (collision.tag == "Ending")
+        {
+            SceneManager.LoadScene("End Screen");
+        }
     }
 }
