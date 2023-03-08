@@ -71,5 +71,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform Left
       objectReference: {fileID: 0}
+    - target: {fileID: 7393163982646310881, guid: a0077391ed4e6dd42a93edbb6dfc375d, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0077391ed4e6dd42a93edbb6dfc375d, type: 3}

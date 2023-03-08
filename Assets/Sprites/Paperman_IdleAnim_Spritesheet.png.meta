@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b552556f4efd03940b1e4f793709c531
+guid: b281751587c510f40b7928e1442385ee
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,17 +101,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PPM_RUN_0
+      name: Paperman_IdleAnim_Spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 679
-        height: 679
+        width: 761.3333
+        height: 761
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f0609756bbe0394395d860c0a02313e
-      internalID: -1681592737
+      spriteID: 9e6a63272049e4c4aa09b51a96a1ec0e
+      internalID: -825776220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PPM_RUN_1
+      name: Paperman_IdleAnim_Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 679
+        x: 761
         y: 0
-        width: 679
-        height: 679
+        width: 761.3333
+        height: 761
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c036ef79afc1e65418e1d538affbea44
-      internalID: -1534794855
+      spriteID: bb092d0a6c9907d4b983eeec343067f3
+      internalID: 335332005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PPM_RUN_2
+      name: Paperman_IdleAnim_Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 1358
+        x: 1522
         y: 0
-        width: 679
-        height: 679
+        width: 761.3333
+        height: 761
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c523ca6c621a0f84ebb77685c14d01c4
-      internalID: -1938278512
+      spriteID: 48e846fbca4617c44b0dd8bf11f2db9a
+      internalID: 528363277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PPM_RUN_3
+      name: Paperman_IdleAnim_Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 2037
+        x: 2283
         y: 0
-        width: 679
-        height: 679
+        width: 761.3333
+        height: 761
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +194,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ff26b17ccf7e244daf889869b4828f7
-      internalID: -1381608724
+      spriteID: 6079b5874047ffa48adc54ab981b0011
+      internalID: 1998137067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paperman_IdleAnim_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 3044
+        y: 0
+        width: 761.3333
+        height: 761
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22053455d60fcd4cb33602bc2571f57
+      internalID: -1622679577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paperman_IdleAnim_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 3805
+        y: 0
+        width: 761.3333
+        height: 761
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49541bf30557354dbee5a36b32de6d4
+      internalID: 532757334
       vertices: []
       indices: 
       edges: []
@@ -199,10 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PPM_RUN_1: -1534794855
-      PPM_RUN_2: -1938278512
-      PPM_RUN_3: -1381608724
-      PPM_RUN_0: -1681592737
+      Paperman_IdleAnim_Spritesheet_3: 1998137067
+      Paperman_IdleAnim_Spritesheet_2: 528363277
+      Paperman_IdleAnim_Spritesheet_1: 335332005
+      Paperman_IdleAnim_Spritesheet_0: -825776220
+      Paperman_IdleAnim_Spritesheet_4: -1622679577
+      Paperman_IdleAnim_Spritesheet_5: 532757334
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

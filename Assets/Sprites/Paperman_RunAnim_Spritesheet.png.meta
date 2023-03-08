@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: af5a127459e04104384a59de116634a4
+guid: 6345224664541ce47bbd00da3331af66
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,17 +101,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PPM_GLIDE_0
+      name: Paperman_RunAnim_Spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 599.3333
-        height: 599
+        width: 761
+        height: 761
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94cd43f12a6243b46839c79c0193ff7d
-      internalID: -4847783
+      spriteID: 80dd44aec9c4c7b45b760dd98281fb6f
+      internalID: -393989067
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PPM_GLIDE_1
+      name: Paperman_RunAnim_Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 599
+        x: 761
         y: 0
-        width: 599.3333
-        height: 599
+        width: 761
+        height: 761
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60e313ee5a2782941b88809e74300ace
-      internalID: -949411327
+      spriteID: 72781324090006341a610b9b39968b0a
+      internalID: -289528347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PPM_GLIDE_2
+      name: Paperman_RunAnim_Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 1198
+        x: 1522
         y: 0
-        width: 599.3333
-        height: 599
+        width: 761
+        height: 761
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,8 +173,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caa1dc28958f31c41a8efdd47cab590f
-      internalID: -1596021945
+      spriteID: dc240d13241aa8d47b78aebaf76cb60c
+      internalID: 1872031175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paperman_RunAnim_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 2283
+        y: 0
+        width: 761
+        height: 761
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2ac1601dd95aa4bb1a90980717a87e
+      internalID: 1166806031
       vertices: []
       indices: 
       edges: []
@@ -178,9 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PPM_GLIDE_2: -1596021945
-      PPM_GLIDE_0: -4847783
-      PPM_GLIDE_1: -949411327
+      Paperman_RunAnim_Spritesheet_1: -289528347
+      Paperman_RunAnim_Spritesheet_2: 1872031175
+      Paperman_RunAnim_Spritesheet_3: 1166806031
+      Paperman_RunAnim_Spritesheet_0: -393989067
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5727ccc960b0d194d92c2470cb74a1a6
+guid: cd60933632e23aa44bd549c88e7041b4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,17 +101,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PPM_GLIDE_EDITED 1_0
+      name: Paperman_JumpAnim_Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 254
-        y: 42
-        width: 347
-        height: 612
+        x: 0
+        y: 0
+        width: 761.3333
+        height: 761
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35b1ac67586b79a49ae263d01bfc8047
-      internalID: 1809292790
+      spriteID: bc30f7734b68799438a657d287429c9a
+      internalID: 1821569140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PPM_GLIDE_EDITED 1_1
+      name: Paperman_JumpAnim_Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 832
-        y: 30
-        width: 330
-        height: 599
+        x: 761
+        y: 0
+        width: 761.3333
+        height: 761
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f01f2051574ad844aa2fb87bc56bd0f
-      internalID: -32000845
+      spriteID: 096c00065dc27494680bdd25f682511e
+      internalID: -2132390924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PPM_GLIDE_EDITED 1_2
+      name: Paperman_JumpAnim_Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 1388
-        y: 34
-        width: 468
-        height: 609
+        x: 1522
+        y: 0
+        width: 761.3333
+        height: 761
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,8 +173,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bddd68091d622b4a8c4b2fe5119c516
-      internalID: -847593969
+      spriteID: 1d0632db0a1f895478dcf53adb0dea20
+      internalID: -2059983685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paperman_JumpAnim_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 2283
+        y: 0
+        width: 761.3333
+        height: 761
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59bbad51befa4254b9a6e04c8d3bcfc3
+      internalID: -1378002355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paperman_JumpAnim_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 3044
+        y: 0
+        width: 761.3333
+        height: 761
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd5f4c8c254b344ba19e2a7dc377eb8
+      internalID: 860955498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paperman_JumpAnim_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 3805
+        y: 0
+        width: 761.3333
+        height: 761
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f40f5e109d964446b69801c2f3dbcbf
+      internalID: 634810548
       vertices: []
       indices: 
       edges: []
@@ -178,9 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PPM_GLIDE_EDITED 1_2: 1809292790
-      PPM_GLIDE_EDITED 1_0: -319040835
-      PPM_GLIDE_EDITED 1_1: 76362247
+      Paperman_JumpAnim_Spritesheet_5: 634810548
+      Paperman_JumpAnim_Spritesheet_2: -2059983685
+      Paperman_JumpAnim_Spritesheet_3: -1378002355
+      Paperman_JumpAnim_Spritesheet_4: 860955498
+      Paperman_JumpAnim_Spritesheet_0: 1821569140
+      Paperman_JumpAnim_Spritesheet_1: -2132390924
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
