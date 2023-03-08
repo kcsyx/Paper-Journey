@@ -14,6 +14,7 @@ public class Shoot : MonoBehaviour
     public Image cdImage;
     public bool isCooldown;
     public float cooldown;
+    public bool canFire = true;
 
     public int platformsSpawned;
     public List<GameObject> bullets;
@@ -37,26 +38,31 @@ public class Shoot : MonoBehaviour
 
     void Fire()
     {
-        if (Input.GetMouseButtonDown(0) && isCooldown == false)
+        if (canFire)
         {
-            isCooldown = true;
-            cdImage.fillAmount = 1;
-            if (!insideWall)
+            if (Input.GetMouseButtonDown(0) && isCooldown == false)
             {
-                Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
-            } else
-            {
-                playerMovement.KBCounter = playerMovement.KBTotalTime;
-                if (playerTransform.rotation.y >= 0)
+                isCooldown = true;
+                cdImage.fillAmount = 1;
+                if (!insideWall)
                 {
-                    playerMovement.KnockFromRight = true;
+                    Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
                 }
-                else if (playerTransform.rotation.y < 0)
+                else
                 {
-                    playerMovement.KnockFromRight = false;
+                    playerMovement.KBCounter = playerMovement.KBTotalTime;
+                    if (playerTransform.rotation.y >= 0)
+                    {
+                        playerMovement.KnockFromRight = true;
+                    }
+                    else if (playerTransform.rotation.y < 0)
+                    {
+                        playerMovement.KnockFromRight = false;
+                    }
                 }
             }
         }
+
 
         if (isCooldown)
         {

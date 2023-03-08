@@ -63,15 +63,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //GLIDING
-        if (Input.GetButton("Jump") && rb.velocity.y <= 0f)
+        if (Input.GetButton("Jump") && rb.velocity.y < 0f)
         {
-            playerShoot.enabled = false;
+            playerShoot.canFire = false;
             isGliding = true;
             rb.gravityScale = 0;
             rb.velocity = new Vector2(rb.velocity.x, -glidingSpeed);
         } else
         {
-            playerShoot.enabled = true;
+            playerShoot.canFire = true;
             anim.SetBool("isGliding", false);
             isGliding = false;
             rb.gravityScale = initialGravityScale;
