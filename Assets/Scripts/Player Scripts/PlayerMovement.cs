@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 6f;
     private float jumpingPower = 20f;
     private bool isFacingRight = true;
-    private float horizontal;
+    public float horizontal;
 
     private float glidingSpeed = 4f;
     private float initialGravityScale;
@@ -94,9 +94,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
+            rb.gravityScale = 0;
             isGliding = false;
             anim.SetBool("isGliding", false);
             anim.SetBool("isJumping", false);
+        } else
+        {
+
         }
 
         if (!isGrounded)

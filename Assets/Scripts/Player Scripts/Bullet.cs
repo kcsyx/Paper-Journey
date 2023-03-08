@@ -36,6 +36,7 @@ public class Bullet : MonoBehaviour
                 {
                     bulletCollider.isTrigger = false;
                     IsPlatformOrNot = true;
+                    gameObject.layer = LayerMask.NameToLayer("Ground");
                     playerShoot.platformsSpawned++;
                     playerShoot.bullets.Add(gameObject);
                     rb.bodyType = RigidbodyType2D.Static;
@@ -47,6 +48,7 @@ public class Bullet : MonoBehaviour
                     playerShoot.platformsSpawned--;
                     bulletCollider.isTrigger = false;
                     IsPlatformOrNot = true;
+                    gameObject.layer = LayerMask.NameToLayer("Ground");
                     playerShoot.platformsSpawned++;
                     playerShoot.bullets.Add(gameObject);
                     rb.bodyType = RigidbodyType2D.Static;
