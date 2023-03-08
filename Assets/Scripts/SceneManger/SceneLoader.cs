@@ -29,6 +29,19 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine(LoadLevel(nxtLvl));
     }
 
+    public void RestartCurrentLevel(string currentLvl)
+    {
+        StartCoroutine(RestartLevel(currentLvl));
+    }
+
+    IEnumerator RestartLevel(string currentLvl)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(currentLvl);
+        PlayerHealth.maxHp = 3;
+        PlayerHealth.currHp = PlayerHealth.maxHp;
+    }
     IEnumerator LoadLevel(string LevelName)
     {
         transition.SetTrigger("Start");
