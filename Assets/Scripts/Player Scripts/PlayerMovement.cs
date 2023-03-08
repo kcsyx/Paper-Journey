@@ -26,6 +26,13 @@ public class PlayerMovement : MonoBehaviour
     public ParticleController particleController;
     public Shoot playerShoot;
 
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask groundLayer;
+
+    private float coyoteTime = 0.07f;
+    private float coyoteTimeCounter;
+
     void Start()
     {
         initialGravityScale = rb.gravityScale;
@@ -34,12 +41,25 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        } else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
         horizontal = Input.GetAxisRaw("Horizontal");
 
         //JUMPING
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if(Input.GetButtonDown("Jump") && coyoteTimeCounter > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+        }
+
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        {
+            coyoteTimeCounter = 0;
         }
 
         //GLIDING
@@ -63,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        CheckSurroundings();
         if (horizontal != 0 && isGrounded)
         {
             anim.SetBool("isRunning", true);
@@ -114,15 +135,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void CheckSurroundings()
+    {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == 6)
         {
             particleController.fallParticle.Play();
-            isGrounded = true;
+/*            isGrounded = true;*/
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+/*    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 6)
         {
@@ -136,7 +162,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
         }
-    }
+    }*/
 
     private void Flip()
     {
@@ -148,5 +174,10 @@ public class PlayerMovement : MonoBehaviour
                         transform.localScale = localScale;*/
             transform.Rotate(0f, 180f, 0f);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 }
