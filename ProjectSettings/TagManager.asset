@@ -15,6 +15,7 @@ TagManager:
   - Ending
   - ZoomOut
   - ZoomIn
+  - Sinking
   layers:
   - Default
   - TransparentFX

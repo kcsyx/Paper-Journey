@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTime = 0.07f;
     private float coyoteTimeCounter;
 
+    private bool inSinkZone = false;
     void Start()
     {
         initialGravityScale = rb.gravityScale;
@@ -94,13 +95,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
-            rb.gravityScale = 0;
+            if(!inSinkZone)
+            {
+                rb.gravityScale = 0;
+            }
+
             isGliding = false;
             anim.SetBool("isGliding", false);
             anim.SetBool("isJumping", false);
-        } else
-        {
-
         }
 
         if (!isGrounded)
@@ -151,22 +153,29 @@ public class PlayerMovement : MonoBehaviour
             particleController.fallParticle.Play();
 /*            isGrounded = true;*/
         }
-    }
-/*    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == 6)
+
+        if (collision.gameObject.tag == "Sinking")
         {
-            isGrounded = false;
+            rb.gravityScale = initialGravityScale;
+            inSinkZone = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Sinking")
+        {
+            rb.gravityScale = 0;
+            inSinkZone = false;
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 6)
+        if (collision.gameObject.tag == "Sinking")
         {
-            isGrounded = true;
+            rb.gravityScale = initialGravityScale;
         }
-    }*/
+    }
 
     private void Flip()
     {
