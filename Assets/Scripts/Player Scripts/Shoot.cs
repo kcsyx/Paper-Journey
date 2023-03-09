@@ -54,10 +54,12 @@ public class Shoot : MonoBehaviour
                     if (playerTransform.rotation.y >= 0)
                     {
                         playerMovement.KnockFromRight = true;
+                        StartCoroutine(Wait());
                     }
                     else if (playerTransform.rotation.y < 0)
                     {
                         playerMovement.KnockFromRight = false;
+                        StartCoroutine(Wait());
                     }
                 }
             }
@@ -75,5 +77,13 @@ public class Shoot : MonoBehaviour
             }
         }
 
+    }
+
+    IEnumerator Wait()
+    {
+        playerMovement.canMove = false;
+        yield return new WaitForSeconds(0.2f);
+        playerMovement.canMove = true;
+        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
     }
 }

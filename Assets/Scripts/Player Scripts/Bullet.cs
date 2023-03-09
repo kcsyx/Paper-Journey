@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private float speed = 10f;
+    private float speed = 15f;
     private Rigidbody2D rb;
     public int bulletDamage = 1;
     Collider2D bulletCollider;
@@ -59,7 +59,7 @@ public class Bullet : MonoBehaviour
             {
                 collision.attachedRigidbody.bodyType = RigidbodyType2D.Dynamic;
                 collision.attachedRigidbody.AddForce(Vector2.right * 10, ForceMode2D.Impulse);
-            } else if (collision.tag == "Checkpoint" || collision.tag == "ZoomOut" || collision.tag == "ZoomIn" || collision.tag == "Goal")
+            } else if (collision.tag == "Checkpoint" || collision.tag == "ZoomOut" || collision.tag == "ZoomIn" || collision.tag == "Goal" || collision.tag == "Sinking")
             {
                 return;
             }
@@ -69,7 +69,10 @@ public class Bullet : MonoBehaviour
             }
             else if (collision.tag == "Bullet")
             {
-                Destroy(gameObject);
+                if (collision.GetComponent<Bullet>().IsPlatformOrNot)
+                {
+                    Destroy(gameObject);
+                }
                 return;
             }
             Destroy(gameObject);

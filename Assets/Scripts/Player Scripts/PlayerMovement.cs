@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTimeCounter;
 
     private bool inSinkZone = false;
+    public bool canMove = true;
     void Start()
     {
         initialGravityScale = rb.gravityScale;
@@ -50,10 +51,13 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
+        if (canMove)
+        {
         horizontal = Input.GetAxisRaw("Horizontal");
+        }
 
         //JUMPING
-        if(Input.GetButtonDown("Jump") && coyoteTimeCounter > 0f)
+        if (Input.GetButtonDown("Jump") && coyoteTimeCounter > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
