@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     Collider2D bulletCollider;
     public bool IsPlatformOrNot = false;
 
-    public Shoot playerShoot;
+    private Shoot playerShoot;
 
     void Start()
     {
@@ -18,11 +18,24 @@ public class Bullet : MonoBehaviour
         rb.velocity = transform.right * speed;
         bulletCollider = GetComponent<Collider2D>();
         bulletCollider.isTrigger = true;
+        playerShoot = GameObject.FindWithTag("Player").GetComponent<Shoot>();
     }
 
     void Update()
     {
         StartCoroutine(DestroyBullet());
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (playerShoot.platformsSpawned > 0)
+            {
+                for(int i = playerShoot.platformsSpawned - 1; i >= 0; i--)
+                {
+                    Destroy(playerShoot.bullets[i]);
+                }
+                playerShoot.bullets.Clear();
+                playerShoot.platformsSpawned = 0;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,7 +44,6 @@ public class Bullet : MonoBehaviour
         {
             if (collision.tag == "Wall")
             {
-
                 if (playerShoot.platformsSpawned == 0 || playerShoot.platformsSpawned == 1)
                 {
                     bulletCollider.isTrigger = false;

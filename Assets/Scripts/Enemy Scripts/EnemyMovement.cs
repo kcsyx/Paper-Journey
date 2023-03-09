@@ -32,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    void Flip()
+    public void Flip()
     {
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;

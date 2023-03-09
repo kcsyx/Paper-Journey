@@ -9966,6 +9966,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  canMove: 1
 --- !u!114 &6977015308551129963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9984,10 +9985,8 @@ MonoBehaviour:
   isCooldown: 0
   cooldown: 1
   canFire: 1
-  platformsSpawned: 2
-  bullets:
-  - {fileID: 0}
-  - {fileID: 0}
+  platformsSpawned: 0
+  bullets: []
   wallLayer:
     serializedVersion: 2
     m_Bits: 64

@@ -23,6 +23,7 @@ public class Shoot : MonoBehaviour
     public Transform playerTransform;
     public PlayerMovement playerMovement;
     private bool insideWall;
+
     void Start()
     {
         platformsSpawned = 0;

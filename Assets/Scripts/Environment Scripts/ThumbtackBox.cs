@@ -12,7 +12,7 @@ public class ThumbtackBox : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<PlayerHealth>().canTakeDamage)
             {
-                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 20f, ForceMode2D.Impulse);
+                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 10f, ForceMode2D.Impulse);
             }
             collision.gameObject.GetComponent<PlayerHealth>().takeDamage(damage);
         }
@@ -23,7 +23,7 @@ public class ThumbtackBox : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<PlayerHealth>().canTakeDamage)
             {
-                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 20f, ForceMode2D.Impulse);
+                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 10f, ForceMode2D.Impulse);
             }
             collision.gameObject.GetComponent<PlayerHealth>().takeDamage(damage);
         }

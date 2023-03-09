@@ -13,6 +13,8 @@ public class Pendulum : MonoBehaviour
 
     bool movingClockwise;
 
+    public GameObject enemy;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); 
@@ -29,13 +31,29 @@ public class Pendulum : MonoBehaviour
     {
         if(transform.rotation.z > rightAngle)
         {
+            if (movingClockwise)
+            {
+                Flip();
+            }
             movingClockwise = false;
+            
         }
 
         if(transform.rotation.z < leftAngle)
         {
+            if(!movingClockwise)
+            {
+                Flip();
+            }
             movingClockwise = true;
         }
+    }
+
+    private void Flip()
+    {
+        Vector3 localScale = enemy.transform.localScale;
+        localScale.x *= -1f;
+        enemy.transform.localScale = localScale;
     }
 
     public void Move()

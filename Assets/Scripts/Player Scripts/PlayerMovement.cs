@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadius;
     public LayerMask groundLayer;
 
-    private float coyoteTime = 0.07f;
+    private float coyoteTime = 0.09f;
     private float coyoteTimeCounter;
 
     private bool inSinkZone = false;
