@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool inSinkZone = false;
     public bool canMove = true;
+    public bool canJump = true;
     void Start()
     {
         initialGravityScale = rb.gravityScale;
@@ -56,10 +57,13 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         }
 
-        //JUMPING
-        if (Input.GetButtonDown("Jump") && coyoteTimeCounter > 0f)
+        if (canJump)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            //JUMPING
+            if (Input.GetButtonDown("Jump") && coyoteTimeCounter > 0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            }
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)

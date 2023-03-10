@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
 
     public SceneLoader sceneLoader;
     public static bool isPaused;
+    public bool canPause = true;
 
     public Slider _bgmSlider, _sfxSlider;
 
@@ -22,23 +23,28 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && PlayerHealth.currHp > 0)
+        if (canPause)
         {
-            if (isPaused)
+            if (Input.GetKeyDown(KeyCode.Escape) && PlayerHealth.currHp > 0)
             {
-                ResumeGame();
-            }
+                if (isPaused)
+                {
+                    ResumeGame();
+                }
 
-            else
-            {
-                PauseGame();
+                else
+                {
+                    PauseGame();
+                }
             }
         }
+
     }
 
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
+        playerMovement.canMove = false;
         playerMovement.enabled = false;
         playerShoot.enabled = false;
 
@@ -49,6 +55,7 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
+        playerMovement.canMove = true;
         playerMovement.enabled = true;
         playerShoot.enabled = true;
         Time.timeScale = 1f;

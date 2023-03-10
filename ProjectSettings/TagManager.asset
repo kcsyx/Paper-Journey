@@ -16,6 +16,7 @@ TagManager:
   - ZoomOut
   - ZoomIn
   - Sinking
+  - Instructions
   layers:
   - Default
   - TransparentFX
