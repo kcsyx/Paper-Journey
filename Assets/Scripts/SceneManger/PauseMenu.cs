@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -11,7 +12,9 @@ public class PauseMenu : MonoBehaviour
 
     public SceneLoader sceneLoader;
     public static bool isPaused;
-    
+
+    public Slider _bgmSlider, _sfxSlider;
+
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -63,5 +66,15 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Game Quit");
         Application.Quit();
+    }
+
+    public void BGMVolume()
+    {
+        AudioManager.instance.BGMVolume(_bgmSlider.value);
+    }
+
+    public void SFXVolume()
+    {
+        AudioManager.instance.SFXVolume(_sfxSlider.value);
     }
 }
