@@ -33,7 +33,6 @@ public class DialoguePopUp : MonoBehaviour
             dialogue.SetActive(true);
             playerMovement.horizontal = 0;  
             playerMovement.canMove = false;
-            Debug.Log(playerMovement.canMove);
             playerMovement.canJump = false;
             playerShoot.enabled = false;
             pauseMenu.canPause = false;

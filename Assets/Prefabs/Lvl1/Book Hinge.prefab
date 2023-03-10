@@ -107,6 +107,30 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2565115453166054971, guid: 0c4111e0b344bd44d9ee17c3d32cc3a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 61c3f68abc64f3544a9fda2d452aa9fc, type: 3}
+    - target: {fileID: 6293421139864435079, guid: 0c4111e0b344bd44d9ee17c3d32cc3a0, type: 3}
+      propertyPath: m_Size.x
+      value: 7.6197815
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293421139864435079, guid: 0c4111e0b344bd44d9ee17c3d32cc3a0, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293421139864435079, guid: 0c4111e0b344bd44d9ee17c3d32cc3a0, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0000004917383
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293421139864435079, guid: 0c4111e0b344bd44d9ee17c3d32cc3a0, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 12.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293421139864435079, guid: 0c4111e0b344bd44d9ee17c3d32cc3a0, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 12.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c4111e0b344bd44d9ee17c3d32cc3a0, type: 3}
 --- !u!4 &8067372286837971745 stripped
@@ -154,7 +178,7 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: -2.7603328, y: -0.43223074}
+  m_Anchor: {x: -3.75, y: -0.43223074}
   m_ConnectedAnchor: {x: 5.1038227, y: 2.1872282}
   m_UseMotor: 0
   m_Motor:
@@ -176,3 +200,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2192ca4ddecaf9e4a9cc0bdfda655090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallParticle: {fileID: 0}

@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     Animator anim;
     private float speed = 6f;
-    private float jumpingPower = 20f;
+    private float jumpingPower = 17f;
     private bool isFacingRight = true;
     public float horizontal;
 
@@ -36,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
     private bool inSinkZone = false;
     public bool canMove = true;
     public bool canJump = true;
+
+    private float airJumpsRemaining = 1;
+
     void Start()
     {
         initialGravityScale = rb.gravityScale;
@@ -47,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded)
         {
             coyoteTimeCounter = coyoteTime;
+            airJumpsRemaining = 1;
         } else
         {
             coyoteTimeCounter -= Time.deltaTime;
@@ -71,8 +75,19 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter = 0;
         }
 
+        //Double jump
+        if(!isGrounded && Input.GetButtonDown("Jump"))
+        {
+            if(airJumpsRemaining > 0)
+            {
+                anim.SetBool("isJumping", false);
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+                airJumpsRemaining--;
+            }
+        }
+
         //GLIDING
-        if (Input.GetButton("Jump") && rb.velocity.y < 0f)
+        if (Input.GetKey(KeyCode.LeftShift) && rb.velocity.y < 0f)
         {
             playerShoot.canFire = false;
             isGliding = true;

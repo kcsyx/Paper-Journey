@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 7569758525422267513}
   - component: {fileID: 7569758525422267512}
   - component: {fileID: 4544748970650626555}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ MonoBehaviour:
   - {x: 5.5341187, y: -0.63414, z: 0}
   m_ShapePathHash: 1288016917
   m_Mesh: {fileID: 0}
-  m_InstanceId: 163626
+  m_InstanceId: 57092
 --- !u!1 &7569758525605750596
 GameObject:
   m_ObjectHideFlags: 0
