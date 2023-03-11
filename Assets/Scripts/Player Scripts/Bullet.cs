@@ -28,12 +28,14 @@ public class Bullet : MonoBehaviour
         {
             if (playerShoot.platformsSpawned > 0)
             {
-                for(int i = playerShoot.platformsSpawned - 1; i >= 0; i--)
+                int counter = playerShoot.platformsSpawned;
+                for(int i = counter - 1; i >= 0; i--)
                 {
                     Destroy(playerShoot.bullets[i]);
+                    playerShoot.bullets.RemoveAt(i);
+                    playerShoot.platformsSpawned--;
+                    break;
                 }
-                playerShoot.bullets.Clear();
-                playerShoot.platformsSpawned = 0;
             }
         }
     }
