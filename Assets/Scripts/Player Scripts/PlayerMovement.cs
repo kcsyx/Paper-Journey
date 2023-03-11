@@ -51,7 +51,8 @@ public class PlayerMovement : MonoBehaviour
         {
             coyoteTimeCounter = coyoteTime;
             airJumpsRemaining = 1;
-        } else
+        }
+        else
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
@@ -105,6 +106,16 @@ public class PlayerMovement : MonoBehaviour
             rb.gravityScale = initialGravityScale;
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isGrounded)
+        {
+            AudioManager.instance.sfxSource.Stop();
+            AudioManager.instance.PlaySFX("glide");
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            AudioManager.instance.sfxSource.Stop();
+        }
         Flip();
 
     }
@@ -138,7 +149,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isGliding)
             {
-                AudioManager.instance.PlaySFX("glide");
                 anim.SetBool("isGliding", true);
             }
             else if (rb.velocity.y > 0)
