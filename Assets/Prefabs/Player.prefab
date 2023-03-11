@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.75
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -190,6 +190,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 99c98ec304d0f8549a9f83d68c510016, type: 3}
   - name: menu_open
     clip: {fileID: 8300000, guid: 19324daa493619745ab65fb40c0d74b1, type: 3}
+  - name: droplet
+    clip: {fileID: 8300000, guid: 9ad5a32d5e0bc8c428780bbf2cc7a959, type: 3}
   bgmSource: {fileID: 1790196073}
   sfxSource: {fileID: 858314749}
 --- !u!1 &1790196072
