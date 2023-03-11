@@ -20,6 +20,7 @@ public class SceneLoader : MonoBehaviour
     //handles click events for buttons
     private void BtnOnClick()
     {
+        AudioManager.instance.PlaySFX("menu_open");
         btn.interactable = false;
         LoadNextLevel(destination);
     }
@@ -31,11 +32,14 @@ public class SceneLoader : MonoBehaviour
 
     public void RestartCurrentLevel(string currentLvl)
     {
+        AudioManager.instance.PlaySFX("menu_open");
         StartCoroutine(RestartLevel(currentLvl));
     }
 
     IEnumerator RestartLevel(string currentLvl)
     {
+        Time.timeScale = 1f;
+
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(currentLvl);

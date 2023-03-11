@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
             }
 
             StartCoroutine(DamageFlicker());
+            AudioManager.instance.PlaySFX("dmg");
         }
     }
 
@@ -44,6 +45,8 @@ public class PlayerHealth : MonoBehaviour
         playerRespawn.enabled = false;
         playerMovement.enabled = false;
         playerShoot.enabled = false;
+
+        Time.timeScale = 0f;
     }
 
     IEnumerator DamageFlicker()

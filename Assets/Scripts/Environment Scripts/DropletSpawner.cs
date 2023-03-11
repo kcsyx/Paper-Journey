@@ -16,7 +16,7 @@ public class DropletSpawner : MonoBehaviour
     }
 
     IEnumerator spawnDroplet(float interval, GameObject droplet)
-    {
+    {   
         yield return new WaitForSeconds(interval);
         GameObject newDroplet = Instantiate(droplet, transform.position, Quaternion.identity);
         StartCoroutine(spawnDroplet(interval, droplet));

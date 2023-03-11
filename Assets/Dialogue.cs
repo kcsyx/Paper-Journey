@@ -25,7 +25,10 @@ public class Dialogue : MonoBehaviour
             if(textComponent.text == lines[index])
             {
                 NextLine();
-            } else {
+            } 
+            
+            else 
+            {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
             }

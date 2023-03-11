@@ -43,6 +43,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        AudioManager.instance.PlaySFX("menu_open");
         pauseMenu.SetActive(true);
         playerMovement.canMove = false;
         playerMovement.enabled = false;
@@ -54,6 +55,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        AudioManager.instance.PlaySFX("menu_open");
         pauseMenu.SetActive(false);
         playerMovement.canMove = true;
         playerMovement.enabled = true;

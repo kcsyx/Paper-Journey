@@ -67,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Jump") && coyoteTimeCounter > 0f)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+                AudioManager.instance.PlaySFX("jump");
             }
         }
 
@@ -82,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 anim.SetBool("isJumping", false);
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+                AudioManager.instance.PlaySFX("jump");
                 airJumpsRemaining--;
             }
         }
@@ -93,7 +95,9 @@ public class PlayerMovement : MonoBehaviour
             isGliding = true;
             rb.gravityScale = 0;
             rb.velocity = new Vector2(rb.velocity.x, -glidingSpeed);
-        } else
+        } 
+        
+        else
         {
             playerShoot.canFire = true;
             anim.SetBool("isGliding", false);
@@ -111,7 +115,9 @@ public class PlayerMovement : MonoBehaviour
         if (horizontal != 0 && isGrounded)
         {
             anim.SetBool("isRunning", true);
-        } else
+        } 
+        
+        else
         {
             anim.SetBool("isRunning", false);
         }
@@ -132,6 +138,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isGliding)
             {
+                AudioManager.instance.PlaySFX("glide");
                 anim.SetBool("isGliding", true);
             }
             else if (rb.velocity.y > 0)
