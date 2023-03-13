@@ -10,6 +10,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource bgmSource, sfxSource;
 
     public static AudioManager instance;
+    public static float sfxVol = 0.5f;
+    public static float bgmVol = 0.2f;
 
     private void Awake()
     {
@@ -65,11 +67,13 @@ public class AudioManager : MonoBehaviour
 
     public void BGMVolume(float volume)
     {
-        bgmSource.volume = volume;
+        bgmVol = volume;
+        bgmSource.volume = bgmVol;
     }
 
     public void SFXVolume(float volume)
     {
-        sfxSource.volume = volume;
+        sfxVol = volume;
+        sfxSource.volume = sfxVol;
     }
 }

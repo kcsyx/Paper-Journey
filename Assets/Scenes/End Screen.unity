@@ -636,7 +636,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1177538031}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1465640582}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadNextLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Title Screen
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1177538031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,6 +1021,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 306385987146564792, guid: ec3f90490f3aab445ba95a0eb8f44410, type: 3}
   m_PrefabInstance: {fileID: 1465640576}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1465640582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 306385987146564793, guid: ec3f90490f3aab445ba95a0eb8f44410, type: 3}
+  m_PrefabInstance: {fileID: 1465640576}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59865e3d2a673e44e9454b437f8666d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1716555929
 GameObject:
   m_ObjectHideFlags: 0

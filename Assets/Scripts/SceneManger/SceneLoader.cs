@@ -11,22 +11,12 @@ public class SceneLoader : MonoBehaviour
     public Button btn;
     public string destination;
 
-    void Start()
+    public void LoadFirstLevel(string nxtLvl)
     {
-        btn.onClick.AddListener(BtnOnClick);
-        btn.interactable = true;
-    }
-
-    //handles click events for buttons
-    private void BtnOnClick()
-    {
-        AudioManager.instance.PlaySFX("menu_open");
-        btn.interactable = false;
         PlayerHealth.maxHp = 3;
         PlayerHealth.currHp = PlayerHealth.maxHp;
-        LoadNextLevel(destination);
+        StartCoroutine(LoadLevel(nxtLvl));
     }
-
     public void LoadNextLevel(string nxtLvl)
     {
         StartCoroutine(LoadLevel(nxtLvl));

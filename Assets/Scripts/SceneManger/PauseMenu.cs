@@ -16,6 +16,11 @@ public class PauseMenu : MonoBehaviour
 
     public Slider _bgmSlider, _sfxSlider;
 
+    private void Awake()
+    {
+        _bgmSlider.value = AudioManager.bgmVol;
+        _sfxSlider.value = AudioManager.sfxVol;
+    }
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -23,6 +28,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+
         if (canPause)
         {
             if (Input.GetKeyDown(KeyCode.Escape) && PlayerHealth.currHp > 0)
