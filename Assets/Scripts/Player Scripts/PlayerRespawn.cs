@@ -32,6 +32,7 @@ public class PlayerRespawn : MonoBehaviour
 
         if (collision.tag == "Checkpoint")
         {
+            collision.gameObject.GetComponent<Animator>().SetBool("passed", true);
             respawnPoint = collision.transform.position;
         }
 

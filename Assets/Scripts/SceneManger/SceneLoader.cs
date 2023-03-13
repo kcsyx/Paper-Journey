@@ -22,6 +22,8 @@ public class SceneLoader : MonoBehaviour
     {
         AudioManager.instance.PlaySFX("menu_open");
         btn.interactable = false;
+        PlayerHealth.maxHp = 3;
+        PlayerHealth.currHp = PlayerHealth.maxHp;
         LoadNextLevel(destination);
     }
 
