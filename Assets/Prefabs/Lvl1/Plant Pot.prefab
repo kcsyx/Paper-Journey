@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2278092094696333647}
   - component: {fileID: 2278092094696333646}
   - component: {fileID: 2278092094696333640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant Pot
   m_TagString: Wall
   m_Icon: {fileID: 0}

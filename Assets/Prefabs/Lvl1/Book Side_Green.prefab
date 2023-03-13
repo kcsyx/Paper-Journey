@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3608730912847469171}
   - component: {fileID: 3608730912847469170}
   - component: {fileID: 5105795969478348238}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Book Side_Green
   m_TagString: Wall
   m_Icon: {fileID: 0}
