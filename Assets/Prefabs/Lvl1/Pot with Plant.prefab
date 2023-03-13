@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4580563720477317447}
   - component: {fileID: 5456609890053686243}
   - component: {fileID: 7664682685216394726}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Pot with Plant
   m_TagString: Wall
   m_Icon: {fileID: 0}

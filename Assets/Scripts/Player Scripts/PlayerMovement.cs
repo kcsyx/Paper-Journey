@@ -27,13 +27,12 @@ public class PlayerMovement : MonoBehaviour
     public Shoot playerShoot;
 
     public Transform groundCheck;
-    public float groundCheckRadius;
+    public Vector2 groundCheckRadius;
     public LayerMask groundLayer;
 
     private float coyoteTime = 0.09f;
     private float coyoteTimeCounter;
 
-    private bool inSinkZone = false;
     public bool canMove = true;
     public bool canJump = true;
 
@@ -135,10 +134,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
-            if(!inSinkZone)
-            {
-                rb.gravityScale = 0;
-            }
 
             isGliding = false;
             anim.SetBool("isGliding", false);
@@ -183,7 +178,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckSurroundings()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        isGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckRadius, 0, groundLayer);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -194,28 +189,8 @@ public class PlayerMovement : MonoBehaviour
 /*            isGrounded = true;*/
         }
 
-        if (collision.gameObject.tag == "Sinking")
-        {
-            rb.gravityScale = initialGravityScale;
-            inSinkZone = true;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Sinking")
-        {
-            rb.gravityScale = 0;
-            inSinkZone = false;
-        }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Sinking")
-        {
-            rb.gravityScale = initialGravityScale;
-        }
-    }
 
     private void Flip()
     {
@@ -231,6 +206,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        Gizmos.DrawWireCube(groundCheck.position, groundCheckRadius);
     }
 }
