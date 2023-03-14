@@ -44,7 +44,7 @@ public class PlayerRespawn : MonoBehaviour
 
         if (collision.tag == "Ending")
         {
-            SceneManager.LoadScene("End Screen");
+            SceneManager.LoadScene("Ending Cutscene");
         }
     }
 }

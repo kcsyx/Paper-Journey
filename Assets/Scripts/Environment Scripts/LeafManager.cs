@@ -21,10 +21,16 @@ public class LeafManager : MonoBehaviour
     }
     void Start()
     {
+        //group 1
         Instantiate(leafPrefab, new Vector2(198.1f, 55.39f), leafPrefab.transform.rotation);
         Instantiate(leafPrefab, new Vector2(194.54f, 59.22f), leafPrefab.transform.rotation);
         Instantiate(leafPrefab, new Vector2(197.52f, 66.19f), leafPrefab.transform.rotation);
         Instantiate(leafPrefab, new Vector2(200.59f, 69.82f), leafPrefab.transform.rotation);
+
+        //group 2
+        Instantiate(leafPrefab, new Vector2(268.3f, 60.34f), leafPrefab.transform.rotation);
+        Instantiate(leafPrefab, new Vector2(272.7f, 62.72f), leafPrefab.transform.rotation);
+        Instantiate(leafPrefab, new Vector2(278.3f, 62.72f), leafPrefab.transform.rotation);
     }
 
 
