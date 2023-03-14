@@ -18,8 +18,11 @@ public class PauseMenu : MonoBehaviour
 
     private void Awake()
     {
-        _bgmSlider.value = AudioManager.bgmVol;
-        _sfxSlider.value = AudioManager.sfxVol;
+        if (AudioManager.instance)
+        {
+            _bgmSlider.value = AudioManager.bgmVol;
+            _sfxSlider.value = AudioManager.sfxVol;
+        }
     }
     void Start()
     {

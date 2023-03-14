@@ -135,10 +135,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
-            if(!inSinkZone)
+/*            if(!inSinkZone)
             {
                 rb.gravityScale = 0;
-            }
+            }*/
 
             isGliding = false;
             anim.SetBool("isGliding", false);
@@ -194,13 +194,13 @@ public class PlayerMovement : MonoBehaviour
 /*            isGrounded = true;*/
         }
 
-        if (collision.gameObject.tag == "Sinking")
+/*        if (collision.gameObject.tag == "Sinking")
         {
             rb.gravityScale = initialGravityScale;
             inSinkZone = true;
-        }
+        }*/
     }
-    private void OnTriggerExit2D(Collider2D collision)
+/*    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Sinking")
         {
@@ -215,7 +215,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.gravityScale = initialGravityScale;
         }
-    }
+    }*/
 
     private void Flip()
     {
