@@ -614,7 +614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &999084814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,7 +1024,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level 1
+          m_StringArgument: Intro Cutscene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1494235975
@@ -2002,7 +2002,7 @@ PrefabInstance:
       objectReference: {fileID: 1494235974}
     - target: {fileID: 306385987146564793, guid: ec3f90490f3aab445ba95a0eb8f44410, type: 3}
       propertyPath: destination
-      value: Level 1
+      value: Intro Cutscene
       objectReference: {fileID: 0}
     - target: {fileID: 306385987146564795, guid: ec3f90490f3aab445ba95a0eb8f44410, type: 3}
       propertyPath: m_Name

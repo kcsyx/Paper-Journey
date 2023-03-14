@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTime = 0.09f;
     private float coyoteTimeCounter;
 
-    private bool inSinkZone = false;
+    /*private bool inSinkZone = false;*/
     public bool canMove = true;
     public bool canJump = true;
 
