@@ -9,17 +9,17 @@ public class FallingLeaf : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = transform.parent.GetComponent<Rigidbody2D>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player" && !isFalling)
+        if (collision.gameObject.tag == "Player" && !isFalling)
         {
-            LeafManager.LeafManagerInstance.StartCoroutine("SpawnLeaf", new Vector2(transform.position.x, transform.position.y));
+            LeafManager.LeafManagerInstance.StartCoroutine("SpawnLeaf", new Vector2(transform.parent.transform.position.x, transform.parent.transform.position.y));
             Invoke("DropLeaf", 0.5f);
             isFalling = true;
-            Destroy(gameObject, 2f);
+            Destroy(transform.parent.gameObject, 2f);
         }
     }
 

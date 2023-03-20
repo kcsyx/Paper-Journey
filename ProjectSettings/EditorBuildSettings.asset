@@ -21,9 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Ending Cutscene.unity
     guid: 0760487fa35510f49b7e19fe752a90d2
   - enabled: 0
-    path: Assets/Scenes/Test Level.unity
-    guid: 8d560fb6991a4874586f24af4256b7e1
-  - enabled: 0
     path: Assets/Scenes/End Screen.unity
     guid: 4bfa4406d4817b04ea03cc93aa8f229c
   m_configObjects: {}
