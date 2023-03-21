@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     private float speed = 15f;
     private Rigidbody2D rb;
     public int bulletDamage = 1;
-    Collider2D bulletCollider;
+    Collider2D[] bulletCollider;
     public bool IsPlatformOrNot = false;
 
     private Shoot playerShoot;
@@ -16,8 +16,9 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
-        bulletCollider = GetComponent<Collider2D>();
-        bulletCollider.isTrigger = true;
+        bulletCollider = GetComponents<Collider2D>();
+        bulletCollider[0].isTrigger = true;
+        bulletCollider[1].isTrigger = true;
         playerShoot = GameObject.FindWithTag("Player").GetComponent<Shoot>();
     }
 
@@ -48,7 +49,8 @@ public class Bullet : MonoBehaviour
             {
                 if (playerShoot.platformsSpawned == 0 || playerShoot.platformsSpawned == 1)
                 {
-                    bulletCollider.isTrigger = false;
+                    bulletCollider[0].isTrigger = false;
+                    bulletCollider[1].isTrigger = false;
                     IsPlatformOrNot = true;
                     gameObject.layer = LayerMask.NameToLayer("Ground");
                     playerShoot.platformsSpawned++;
@@ -60,7 +62,8 @@ public class Bullet : MonoBehaviour
                     Destroy(playerShoot.bullets[0]);
                     playerShoot.bullets.RemoveAt(0);
                     playerShoot.platformsSpawned--;
-                    bulletCollider.isTrigger = false;
+                    bulletCollider[0].isTrigger = false;
+                    bulletCollider[1].isTrigger = false;
                     IsPlatformOrNot = true;
                     gameObject.layer = LayerMask.NameToLayer("Ground");
                     playerShoot.platformsSpawned++;

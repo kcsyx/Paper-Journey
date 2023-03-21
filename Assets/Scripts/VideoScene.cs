@@ -15,6 +15,13 @@ public class VideoScene : MonoBehaviour
 
 
     }
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            SceneManager.LoadScene("Title Screen");
+        }
+    }
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {

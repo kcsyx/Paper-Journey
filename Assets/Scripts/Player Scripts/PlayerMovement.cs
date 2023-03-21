@@ -135,10 +135,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
-/*            if(!inSinkZone)
+            if (horizontal == 0)
             {
                 rb.gravityScale = 0;
-            }*/
+            } else
+            {
+                rb.gravityScale = initialGravityScale;
+            }
 
             isGliding = false;
             anim.SetBool("isGliding", false);
