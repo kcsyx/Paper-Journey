@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 96d6ff1b4378f4248b547f315af2d929
+guid: 653e059fcb9c9c44d96961de17f47d9f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Caterpillar_Spritesheet_0
+      name: Caterpillar_Spritesheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fe619abcaf03c748b36c47879d83037
-      internalID: -484073652
+      spriteID: 63406f74c7d49374299d690b0542c7f8
+      internalID: -387899656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caterpillar_Spritesheet_1
+      name: Caterpillar_Spritesheet 1_1
       rect:
         serializedVersion: 2
         x: 800
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62ce7ce98a16f784683832b36f046493
-      internalID: 468750494
+      spriteID: 95a35917434af244699f35150f738b86
+      internalID: -674684897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caterpillar_Spritesheet_2
+      name: Caterpillar_Spritesheet 1_2
       rect:
         serializedVersion: 2
         x: 1600
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3556975d5d23f5f4b9fadd6398383fcd
-      internalID: 1808777444
+      spriteID: dd864cfa59c0fa04db689036254a7fd1
+      internalID: 1304654943
       vertices: []
       indices: 
       edges: []
@@ -178,9 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Caterpillar_Spritesheet_1: 468750494
-      Caterpillar_Spritesheet_2: 1808777444
-      Caterpillar_Spritesheet_0: -484073652
+      Caterpillar_Spritesheet 1_0: -387899656
+      Caterpillar_Spritesheet 1_2: 1304654943
+      Caterpillar_Spritesheet 1_1: -674684897
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
