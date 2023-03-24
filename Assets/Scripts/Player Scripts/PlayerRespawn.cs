@@ -32,9 +32,13 @@ public class PlayerRespawn : MonoBehaviour
 
         if (collision.tag == "Checkpoint")
         {
-            AudioManager.instance.PlaySFX("checkpoint");
-            collision.gameObject.GetComponent<Animator>().SetBool("passed", true);
-            respawnPoint = collision.transform.position;
+            if (collision.gameObject.GetComponent<Checkpoint>().passed != true)
+            {
+                collision.gameObject.GetComponent<Checkpoint>().passed = true;
+                AudioManager.instance.PlaySFX("checkpoint");
+                collision.gameObject.GetComponent<Animator>().SetBool("passed", true);
+                respawnPoint = collision.transform.position;
+            }
         }
 
         //temp

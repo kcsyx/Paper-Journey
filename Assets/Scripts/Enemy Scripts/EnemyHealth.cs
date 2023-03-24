@@ -22,7 +22,6 @@ public class EnemyHealth : MonoBehaviour
         
         if (currHp <= 0)
         {
-            AudioManager.instance.PlaySFX("enemy_die");
             killEnemy();
         }
 
@@ -36,6 +35,7 @@ public class EnemyHealth : MonoBehaviour
 
     void killEnemy()
     {
+        AudioManager.instance.PlaySFX("enemy_die");
         Destroy(gameObject);
     }
 
