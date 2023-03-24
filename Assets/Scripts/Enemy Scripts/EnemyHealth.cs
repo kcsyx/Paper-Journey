@@ -18,12 +18,20 @@ public class EnemyHealth : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-            currHp -= damage;
-            if (currHp <= 0)
-            {
-                killEnemy();
-            }
-            StartCoroutine(DamageFlicker());
+        currHp -= damage;
+        
+        if (currHp <= 0)
+        {
+            AudioManager.instance.PlaySFX("enemy_die");
+            killEnemy();
+        }
+
+        else
+        {
+            AudioManager.instance.PlaySFX("enemy_hurt");
+        }
+       
+        StartCoroutine(DamageFlicker());
     }
 
     void killEnemy()

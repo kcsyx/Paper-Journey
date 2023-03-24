@@ -21,7 +21,9 @@ public class Heal : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !healed)
         {
+            AudioManager.instance.PlaySFX("heart");
             healed = true;
+
             if(PlayerHealth.currHp < PlayerHealth.maxHp)
             {
                 Destroy(gameObject);
