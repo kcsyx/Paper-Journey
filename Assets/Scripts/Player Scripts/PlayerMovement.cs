@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
 
     private float glidingSpeed = 4f;
     private float initialGravityScale;
-    private bool isGliding = false;
 
     public float KBForce;
     public float KBCounter;
@@ -33,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTime = 0.15f;
     private float coyoteTimeCounter;
 
-    /*private bool inSinkZone = false;*/
     public bool canMove = true;
     public bool canJump = true;
 
@@ -49,120 +47,99 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
+            StopGliding();
+
+            if (horizontal == 0)
+            {
+                rb.gravityScale = 0;
+            }
+            else
+            {
+                rb.gravityScale = initialGravityScale;
+            }
+
+            if (horizontal != 0)
+            {
+                anim.SetBool("isRunning", true);
+            }
+            else
+            {
+                anim.SetBool("isRunning", false);
+            }
+
             coyoteTimeCounter = coyoteTime;
             airJumpsRemaining = 1;
+
+            if(rb.velocity.y <= 5)
+            {
+                
+                anim.SetBool("isJumping", false);
+            }
         }
+
         else
         {
             coyoteTimeCounter -= Time.deltaTime;
+            anim.SetBool("isRunning", false);
+
+            //GLIDING
+            if (Input.GetKey(KeyCode.LeftShift) && rb.velocity.y < 0f)
+            {
+                Glide();
+            }
+            else
+            {
+                StopGliding();
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                AudioManager.instance.sfxSource.Stop();
+                AudioManager.instance.PlaySFX("glide");
+            }
+
         }
 
         if (canMove)
         {
-        horizontal = Input.GetAxisRaw("Horizontal");
+            Move();
         }
 
         if (canJump)
         {
-            //JUMPING
             if (Input.GetButtonDown("Jump") && coyoteTimeCounter > 0f)
             {
-                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-                AudioManager.instance.PlaySFX("jump");
+                Jump();
             }
-        }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-        {
-            coyoteTimeCounter = 0;
-        }
-
-        //Double jump
-        if(!isGrounded && Input.GetButtonDown("Jump"))
-        {
-            if(airJumpsRemaining > 0 && coyoteTimeCounter <= 0f)
+            if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
             {
-                anim.SetBool("isJumping", false);
-                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-                AudioManager.instance.PlaySFX("jump");
-                airJumpsRemaining--;
+                coyoteTimeCounter = 0;
             }
-        }
 
-        //GLIDING
-        if (Input.GetKey(KeyCode.LeftShift) && rb.velocity.y < 0f)
-        {
-            playerShoot.canFire = false;
-            isGliding = true;
-            rb.gravityScale = 0;
-            rb.velocity = new Vector2(rb.velocity.x, -glidingSpeed);
-        } 
-        
-        else
-        {
-            playerShoot.canFire = true;
-            anim.SetBool("isGliding", false);
-            isGliding = false;
-            rb.gravityScale = initialGravityScale;
-        }
+            if (!isGrounded && Input.GetButtonDown("Jump"))
+            {
+                if (airJumpsRemaining > 0 && coyoteTimeCounter <= 0f)
+                {
+                    anim.SetBool("isJumping", false);
+                    Jump();
+                    airJumpsRemaining--;
+                }
+            }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isGrounded)
-        {
-            AudioManager.instance.sfxSource.Stop();
-            AudioManager.instance.PlaySFX("glide");
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             AudioManager.instance.sfxSource.Stop();
         }
-        Flip();
 
+        Flip();
     }
 
     private void FixedUpdate()
     {
         CheckSurroundings();
-        if (horizontal != 0 && isGrounded)
-        {
-            anim.SetBool("isRunning", true);
-        } 
-        
-        else
-        {
-            anim.SetBool("isRunning", false);
-        }
-
-        if (isGrounded)
-        {
-            if (horizontal == 0)
-            {
-                rb.gravityScale = 0;
-            } else
-            {
-                rb.gravityScale = initialGravityScale;
-            }
-
-            isGliding = false;
-            anim.SetBool("isGliding", false);
-            anim.SetBool("isJumping", false);
-        }
-
-        if (!isGrounded)
-        {
-            if (isGliding)
-            {
-                anim.SetBool("isGliding", true);
-            }
-            else if (rb.velocity.y > 0)
-            {
-                anim.SetBool("isJumping", true);
-            }
-            if(rb.velocity.y == 0)
-            {
-                anim.SetBool("isGliding", false);
-            }
-        }
 
         if (KBCounter <= 0)
         {
@@ -184,6 +161,33 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void Move()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+    }
+
+    private void Jump()
+    {
+        anim.SetBool("isJumping", true);
+        rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+        AudioManager.instance.PlaySFX("jump");
+    }
+
+    private void Glide()
+    {
+        anim.SetBool("isGliding", true);
+        playerShoot.canFire = false;
+        rb.gravityScale = 0;
+        rb.velocity = new Vector2(rb.velocity.x, -glidingSpeed);
+    }
+
+    private void StopGliding()
+    {
+        anim.SetBool("isGliding", false);
+        playerShoot.canFire = true;
+        rb.gravityScale = initialGravityScale;
+    }
+
     private void CheckSurroundings()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -194,40 +198,14 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject.layer == 6)
         {
             particleController.fallParticle.Play();
-/*            isGrounded = true;*/
-        }
-
-/*        if (collision.gameObject.tag == "Sinking")
-        {
-            rb.gravityScale = initialGravityScale;
-            inSinkZone = true;
-        }*/
-    }
-/*    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Sinking")
-        {
-            rb.gravityScale = 0;
-            inSinkZone = false;
         }
     }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Sinking")
-        {
-            rb.gravityScale = initialGravityScale;
-        }
-    }*/
 
     private void Flip()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             isFacingRight = !isFacingRight;
-            /*            Vector3 localScale = transform.localScale;
-                        localScale.x *= -1f;
-                        transform.localScale = localScale;*/
             transform.Rotate(0f, 180f, 0f);
         }
     }
