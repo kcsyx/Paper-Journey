@@ -5,6 +5,11 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public SpriteRenderer sprite;
+    public ParticleSystem deathParticle;
+
+    private EnemyDamage enemyDamage;
+    private SpriteRenderer enemySprite;
+    private Collider2D enemyCollider;
 
     public int maxHp;
     public int currHp;
@@ -13,6 +18,9 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
+        enemyCollider = GetComponent<Collider2D>();
+        enemyDamage = GetComponent<EnemyDamage>();
+        enemySprite = GetComponent<SpriteRenderer>();
         currHp = maxHp;
     }
 
@@ -22,6 +30,10 @@ public class EnemyHealth : MonoBehaviour
         
         if (currHp <= 0)
         {
+            AudioManager.instance.PlaySFX("enemy_die");
+            enemyDamage.enabled = false;
+            enemyCollider.enabled = false;
+            enemySprite.enabled = false;
             killEnemy();
         }
 
@@ -35,8 +47,7 @@ public class EnemyHealth : MonoBehaviour
 
     void killEnemy()
     {
-        AudioManager.instance.PlaySFX("enemy_die");
-        Destroy(gameObject);
+        StartCoroutine(Death());
     }
 
     IEnumerator DamageFlicker()
@@ -49,4 +60,12 @@ public class EnemyHealth : MonoBehaviour
             yield return new WaitForSeconds(flickerDuration);
         }
     }
+
+    IEnumerator Death()
+    {
+        deathParticle.Play();
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
+    }
+
 }
