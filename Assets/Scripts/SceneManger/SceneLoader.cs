@@ -17,6 +17,7 @@ public class SceneLoader : MonoBehaviour
         PlayerHealth.currHp = PlayerHealth.maxHp;
         StartCoroutine(LoadLevel(nxtLvl));
     }
+
     public void LoadNextLevel(string nxtLvl)
     {
         StartCoroutine(LoadLevel(nxtLvl));
@@ -38,6 +39,7 @@ public class SceneLoader : MonoBehaviour
         PlayerHealth.maxHp = 3;
         PlayerHealth.currHp = PlayerHealth.maxHp;
     }
+    
     IEnumerator LoadLevel(string LevelName)
     {
         transition.SetTrigger("Start");

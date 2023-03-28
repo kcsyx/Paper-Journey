@@ -7,6 +7,7 @@ public class PlayerRespawn : MonoBehaviour
 {
     private Vector3 respawnPoint;
     public GameObject fallDetector;
+    public SceneLoader crossfade;
     PlayerHealth playerHealth;
     public int fallDamage = 1;
 
@@ -44,12 +45,12 @@ public class PlayerRespawn : MonoBehaviour
         //temp
         if (collision.tag == "Goal")
         {
-            SceneManager.LoadScene("Level 2");
+            crossfade.LoadNextLevel("Level 2");
         }
 
         if (collision.tag == "Ending")
         {
-            SceneManager.LoadScene("Ending Cutscene");
+            crossfade.LoadNextLevel("Ending Cutscene");
         }
     }
 }
