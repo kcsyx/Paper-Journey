@@ -31,9 +31,6 @@ public class EnemyHealth : MonoBehaviour
         if (currHp <= 0)
         {
             AudioManager.instance.PlaySFX("enemy_die");
-            enemyDamage.enabled = false;
-            enemyCollider.enabled = false;
-            enemySprite.enabled = false;
             killEnemy();
         }
 
@@ -47,6 +44,9 @@ public class EnemyHealth : MonoBehaviour
 
     void killEnemy()
     {
+        enemyDamage.enabled = false;
+        enemyCollider.enabled = false;
+        enemySprite.enabled = false;
         StartCoroutine(Death());
     }
 

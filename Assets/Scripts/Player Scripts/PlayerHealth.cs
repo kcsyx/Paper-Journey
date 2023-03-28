@@ -9,6 +9,10 @@ public class PlayerHealth : MonoBehaviour
     public PlayerRespawn playerRespawn;
     public Shoot playerShoot;
 
+    private Rigidbody2D playerRb;
+    private ParticleController playerParticles;
+    /*private Collider2D[] playerColliders;*/
+    public ParticleSystem deathParticle;
     public GameObject deathMenu;
 
     static public int maxHp = 3;
@@ -21,6 +25,9 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         canTakeDamage = true;
+        playerRb = GetComponent<Rigidbody2D>();
+        playerParticles = GetComponentInChildren<ParticleController>();
+        /*playerColliders = GetComponents<Collider2D>();*/
     }
 
     public void takeDamage(int damage)
@@ -40,13 +47,18 @@ public class PlayerHealth : MonoBehaviour
 
     void killPlayer()
     {
-        deathMenu.SetActive(true);
+        playerRb.bodyType = RigidbodyType2D.Static;
         sprite.enabled = false;
+        /*        for (int i = 0; i < playerColliders.Length; i++)
+                {
+                    playerColliders[i].enabled = false;
+                };*/
+        playerParticles.enabled = false;
         playerRespawn.enabled = false;
         playerMovement.enabled = false;
         playerShoot.enabled = false;
 
-        Time.timeScale = 0f;
+        StartCoroutine(Death());
     }
 
     IEnumerator DamageFlicker()
@@ -61,5 +73,13 @@ public class PlayerHealth : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
         canTakeDamage = true;
+    }
+
+    IEnumerator Death()
+    {
+        deathParticle.Play();
+        yield return new WaitForSeconds(1f);
+        deathMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
