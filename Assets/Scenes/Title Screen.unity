@@ -685,6 +685,16 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 99c98ec304d0f8549a9f83d68c510016, type: 3}
   - name: menu_open
     clip: {fileID: 8300000, guid: 19324daa493619745ab65fb40c0d74b1, type: 3}
+  - name: droplet
+    clip: {fileID: 8300000, guid: 9ad5a32d5e0bc8c428780bbf2cc7a959, type: 3}
+  - name: checkpoint
+    clip: {fileID: 8300000, guid: cf7b24896df1f5a48a8aad2178afa39f, type: 3}
+  - name: heart
+    clip: {fileID: 8300000, guid: 59c7d30f18810b24ea8a314dc880d01b, type: 3}
+  - name: enemy_hurt
+    clip: {fileID: 8300000, guid: b4c3326ea842f184088028733ba71149, type: 3}
+  - name: enemy_die
+    clip: {fileID: 8300000, guid: 18f6fd5883ced8140ba540608ce7bad0, type: 3}
   bgmSource: {fileID: 538027660}
   sfxSource: {fileID: 586259788}
 --- !u!4 &999084815
