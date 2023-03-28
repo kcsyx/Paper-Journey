@@ -13,7 +13,7 @@ public class IntroVideoScene : MonoBehaviour
         video.Play();
         video.loopPointReached += CheckOver;
 
-
+        AudioManager.instance.StopBGM();
     }
 
     private void Update()

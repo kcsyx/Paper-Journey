@@ -13,7 +13,10 @@ public class VideoScene : MonoBehaviour
         video.Play();
         video.loopPointReached += CheckOver;
 
-
+        if (AudioManager.instance)
+        {
+            AudioManager.instance.StopBGM();
+        }
     }
     private void Update()
     {

@@ -49,6 +49,14 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopBGM()
+    {
+        if(gameObject != null)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void PlaySFX(string name)
     {
         Sound s = Array.Find(sfxSounds, x => x.name == name);
