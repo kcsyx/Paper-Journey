@@ -9,7 +9,7 @@ public class ZoomIn : MonoBehaviour
 
     private float newZoom = 8.379144f;
     private float initialZoom = 20f;
-    private float time = 0.8f;
+    private float time = 0.6f;
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class ZoomIn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && camera.orthographicSize > newZoom)
+        if (collision.gameObject.tag == "Player" && camera.orthographicSize == initialZoom)
         {
             StartCoroutine(resizeRoutine(initialZoom, newZoom, time));
         }
@@ -29,6 +29,7 @@ public class ZoomIn : MonoBehaviour
 
     private IEnumerator resizeRoutine(float initialZoom, float newZoom, float time)
     {
+        Debug.Log("CALLED");
         float elapsed = 0;
         while (elapsed <= time)
         {

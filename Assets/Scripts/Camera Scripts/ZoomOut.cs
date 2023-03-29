@@ -10,7 +10,7 @@ public class ZoomOut : MonoBehaviour
 
     private float initialZoom = 8.379144f;
     private float newZoom = 20f;
-    private float time = 0.8f;
+    private float time = 0.6f;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class ZoomOut : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && camera.orthographicSize < newZoom)
+        if (collision.gameObject.tag == "Player" && camera.orthographicSize == initialZoom)
         {
             StartCoroutine(resizeRoutine(initialZoom, newZoom, time));
         }
