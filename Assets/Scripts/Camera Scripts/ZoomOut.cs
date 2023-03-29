@@ -10,7 +10,7 @@ public class ZoomOut : MonoBehaviour
 
     private float initialZoom = 8.379144f;
     private float newZoom = 20f;
-    private float time = 0.6f;
+    private float time = 0.7f;
 
     void Start()
     {
