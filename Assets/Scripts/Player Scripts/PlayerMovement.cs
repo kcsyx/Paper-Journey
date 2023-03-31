@@ -37,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float airJumpsRemaining = 1;
 
+    public GameObject[] trails;
+
     void Start()
     {
         initialGravityScale = rb.gravityScale;
@@ -175,6 +177,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Glide()
     {
+        trails[0].SetActive(true);
+        trails[1].SetActive(true);
         anim.SetBool("isGliding", true);
         playerShoot.canFire = false;
         rb.gravityScale = 0;
@@ -183,6 +187,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void StopGliding()
     {
+        trails[0].GetComponent<TrailRenderer>().Clear();
+        trails[1].GetComponent<TrailRenderer>().Clear();
+        trails[0].SetActive(false);
+        trails[1].SetActive(false);
         anim.SetBool("isGliding", false);
         playerShoot.canFire = true;
         rb.gravityScale = initialGravityScale;
